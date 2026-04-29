@@ -316,10 +316,11 @@ VALUES TO VERIFY:
       box-shadow:
         0 24px 64px -20px rgba(122, 18, 212, .25),
         0 4px 14px rgba(15, 19, 26, .04);
+      position: relative;
     }
     .stack-card .stack-head {
-      display: flex; align-items: center; gap: 12px;
       margin-bottom: 6px;
+      padding-right: 90px;
     }
     .stack-card .stack-head h3 {
       font-family: var(--serif);
@@ -328,19 +329,20 @@ VALUES TO VERIFY:
       font-weight: 500;
     }
     .stack-card .stack-head .pill {
+      position: absolute;
+      top: 28px;
+      right: 28px;
       background: var(--brand-bg-2);
       color: var(--brand);
       font-size: 11px;
       letter-spacing: .12em;
       text-transform: uppercase;
       font-weight: 700;
-      padding: 5px 10px;
+      padding: 6px 12px;
       border-radius: 999px;
       white-space: nowrap;
-      flex-shrink: 0;
       line-height: 1;
     }
-    .stack-card .stack-head { flex-wrap: wrap; }
     .stack-card .stack-sub {
       font-size: 13px;
       color: var(--ink-dim);
@@ -1523,6 +1525,38 @@ VALUES TO VERIFY:
       font-weight: 500;
     }
 
+    /* Inline press strip inside the card (under stats) */
+    .trainer-press-inline {
+      padding-top: 22px;
+      border-top: 1px solid rgba(122, 18, 212, .18);
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .trainer-press-inline .label {
+      font-family: var(--serif);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .trainer-press-inline .logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px 28px;
+      filter: grayscale(1) opacity(.55);
+    }
+    .trainer-press-inline .logos img { height: 18px; }
+    @media (max-width: 800px) {
+      .trainer-press-inline { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 18px; }
+      .trainer-press-inline .logos { gap: 14px 22px; }
+      .trainer-press-inline .logos img { height: 14px; }
+    }
+
     /* Inline Vishen quote inside the card */
     .trainer-quote {
       padding-top: 22px;
@@ -1788,7 +1822,7 @@ VALUES TO VERIFY:
               <div class="b-meta">+ 20 more programs unlocked · 280h+ curriculum · cancel anytime</div>
             </div>
           </div>
-          <h1 class="hero-h">Remove obstacles. Attract synchronicities. <em class="purple">With ease.</em></h1>
+          <h1 class="hero-h">Remove obstacles. Attract synchronicities. <em class="purple">Live in alignment.</em></h1>
           <p class="hero-sub">
             60 minutes was the taste — in 7 weeks, every area of your life (money, relationships, decisions, health) bends to your energy instead of the other way around. The same path took <strong>Mfon, a Texas tax lawyer,</strong> to a 50% income lift — and <strong>Haylee, a working mom of two,</strong> took her anxiety from a 10 to a 2.
           </p>
@@ -1875,22 +1909,16 @@ VALUES TO VERIFY:
             <div class="stat"><div class="num">100K+</div><div class="label">5-star reviews</div></div>
           </div>
 
-          <blockquote class="trainer-quote">
-            "After encountering this mild-mannered engineer back in 2014, I'm 100% convinced you can create your own coincidences and synchronicities. What Jeffrey did seems to defy all laws of probability."
-            <cite>— <strong>Vishen Lakhiani</strong>, founder of Mindvalley · 20M+ members</cite>
-          </blockquote>
-        </div>
-      </div>
-
-      <!-- Press logo strip below the card -->
-      <div class="trainer-press">
-        <div class="label">Featured on</div>
-        <div class="logos">
-          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/x/897dfd4eaa/new-york-times_logo.svg" alt="The New York Times">
-          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/102x28/a450a1b6d2/logo_forbes-40px.svg" alt="Forbes">
-          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/68x33/74c459c6fe/logo_cnn.svg" alt="CNN">
-          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/178x33/660efad2fd/logo_usa-today.svg" alt="USA Today">
-          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/65x22/031ee3c7fb/logo-google.svg" alt="Google">
+          <div class="trainer-press-inline">
+            <span class="label">Featured on</span>
+            <div class="logos">
+              <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/x/897dfd4eaa/new-york-times_logo.svg" alt="The New York Times">
+              <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/102x28/a450a1b6d2/logo_forbes-40px.svg" alt="Forbes">
+              <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/68x33/74c459c6fe/logo_cnn.svg" alt="CNN">
+              <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/178x33/660efad2fd/logo_usa-today.svg" alt="USA Today">
+              <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/65x22/031ee3c7fb/logo-google.svg" alt="Google">
+            </div>
+          </div>
         </div>
       </div>
     </div>
