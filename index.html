@@ -1454,85 +1454,81 @@ VALUES TO VERIFY:
     }
     footer a { color: var(--brand); }
 
-    /* Trainer authority section — unified card design */
-    .trainer-card {
-      max-width: 1040px;
-      margin: 0 auto;
-      background: linear-gradient(180deg, #fff 0%, var(--brand-bg) 100%);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 44px 48px;
+    /* Trainer section — matches standard section-head + grid pattern */
+    /* Trainer section — single 2-col grid with all content on left, photo on right */
+    .trainer-grid {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 44px;
+      grid-template-columns: 1fr 400px;
+      gap: 56px;
       align-items: start;
+      max-width: 1140px;
+      margin: 0 auto;
     }
     .trainer-photo {
       width: 100%;
       aspect-ratio: 4/5;
       object-fit: cover;
       border-radius: 18px;
-      box-shadow: 0 20px 50px -16px rgba(15, 19, 26, .25);
+      box-shadow: 0 24px 56px -16px rgba(15, 19, 26, .25);
     }
     .trainer-content .eyebrow {
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
-    .trainer-content h2.tc-h {
+    .trainer-content h2 {
       font-family: var(--serif);
-      font-size: 30px;
-      line-height: 1.15;
-      letter-spacing: -.01em;
       font-weight: 500;
-      margin-bottom: 16px;
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -.012em;
       color: var(--ink);
+      margin: 0 0 20px;
     }
-    .trainer-content h2.tc-h em.purple {
-      color: var(--brand);
-      font-style: normal;
-    }
-    .trainer-content p.tc-bio {
-      font-size: 15.5px;
+    .trainer-content h2 em.italic { color: var(--brand); }
+    .trainer-content .lede {
+      font-size: 17px;
       color: var(--ink-mid);
       line-height: 1.6;
-      margin: 0 0 22px;
+      margin: 0;
     }
-    .trainer-content p.tc-bio strong { color: var(--ink); font-weight: 600; }
+    .trainer-content .lede strong { color: var(--ink); font-weight: 600; }
+    .trainer-div {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 28px 0;
+    }
 
-    /* Inline stat row inside the card */
-    .trainer-stats {
+    /* Stats — single horizontal row */
+    .trainer-stats-inline {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px 36px;
-      padding-top: 22px;
-      margin-bottom: 22px;
-      border-top: 1px solid rgba(122, 18, 212, .18);
+      gap: 16px 40px;
     }
-    .trainer-stats .stat { display: flex; flex-direction: column; gap: 2px; }
-    .trainer-stats .stat .num {
+    .trainer-stat { display: flex; flex-direction: column; gap: 6px; }
+    .trainer-stat .num {
       font-family: var(--serif);
-      font-size: 22px;
-      color: var(--brand);
+      font-size: 28px;
       font-weight: 700;
-      letter-spacing: -.01em;
+      color: var(--brand);
       line-height: 1;
+      letter-spacing: -.01em;
+      white-space: nowrap;
     }
-    .trainer-stats .stat .label {
-      font-size: 11px;
+    .trainer-stat .label {
+      font-size: 10.5px;
       color: var(--ink-dim);
       text-transform: uppercase;
-      letter-spacing: .08em;
-      font-weight: 500;
+      letter-spacing: .12em;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
-    /* Inline press strip inside the card (under stats) */
+    /* Featured on — label inline with logo strip */
     .trainer-press-inline {
-      padding-top: 22px;
-      border-top: 1px solid rgba(122, 18, 212, .18);
       display: flex;
       align-items: center;
-      gap: 22px;
       flex-wrap: wrap;
+      gap: 16px 32px;
     }
     .trainer-press-inline .label {
       font-family: var(--serif);
@@ -1545,90 +1541,23 @@ VALUES TO VERIFY:
     }
     .trainer-press-inline .logos {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 18px 28px;
+      flex-wrap: wrap;
+      gap: 14px 32px;
       filter: grayscale(1) opacity(.55);
     }
-    .trainer-press-inline .logos img { height: 18px; }
-    @media (max-width: 800px) {
-      .trainer-press-inline { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 18px; }
-      .trainer-press-inline .logos { gap: 14px 22px; }
-      .trainer-press-inline .logos img { height: 14px; }
-    }
-
-    /* Inline Vishen quote inside the card */
-    .trainer-quote {
-      padding-top: 22px;
-      border-top: 1px solid rgba(122, 18, 212, .18);
-      font-family: var(--serif);
-      font-size: 16px;
-      color: var(--ink);
-      font-style: italic;
-      line-height: 1.5;
-      margin: 0;
-    }
-    .trainer-quote cite {
-      display: block;
-      margin-top: 10px;
-      font-family: var(--sans);
-      font-style: normal;
-      font-size: 12.5px;
-      color: var(--ink-dim);
-      letter-spacing: .03em;
-    }
-    .trainer-quote cite strong { color: var(--ink); font-weight: 600; }
-
-    /* Press logo strip — separate, smaller, below card */
-    .trainer-press {
-      max-width: 1040px;
-      margin: 28px auto 0;
-      text-align: center;
-    }
-    .trainer-press .label {
-      display: inline-block;
-      font-family: var(--serif);
-      font-size: 10.5px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--ink-dim);
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-    .trainer-press .logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 28px 44px;
-      filter: grayscale(1) opacity(.55);
-      transition: filter .2s ease;
-    }
-    .trainer-press .logos:hover { filter: grayscale(0) opacity(1); }
-    .trainer-press .logos img { height: 20px; }
+    .trainer-press-inline .logos img { height: 20px; width: auto; display: block; }
 
     @media (max-width: 800px) {
-      .trainer-card {
-        grid-template-columns: 1fr;
-        padding: 28px 22px;
-        gap: 22px;
-        border-radius: 22px;
-      }
-      .trainer-photo {
-        max-width: 200px;
-        margin: 0 auto;
-        aspect-ratio: 1/1;
-      }
-      .trainer-content h2.tc-h { font-size: 23px; line-height: 1.18; }
-      .trainer-content p.tc-bio { font-size: 14.5px; }
-      .trainer-stats { gap: 16px 24px; padding-top: 18px; margin-bottom: 18px; }
-      .trainer-stats .stat .num { font-size: 19px; }
-      .trainer-stats .stat .label { font-size: 10px; }
-      .trainer-quote { font-size: 14.5px; padding-top: 18px; }
-      .trainer-quote cite { font-size: 11.5px; }
-      .trainer-press { margin-top: 22px; }
-      .trainer-press .logos { gap: 18px 28px; }
-      .trainer-press .logos img { height: 16px; }
+      .trainer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .trainer-photo { max-width: 240px; margin: 0 auto; aspect-ratio: 1/1; order: -1; }
+      .trainer-content h2 { font-size: 26px; }
+      .trainer-content .lede { font-size: 15px; }
+      .trainer-div { margin: 22px 0; }
+      .trainer-stats-inline { gap: 14px 28px; }
+      .trainer-stat .num { font-size: 22px; }
+      .trainer-press-inline { gap: 12px 22px; }
+      .trainer-press-inline .logos img { height: 16px; }
     }
 
     /* utility */
@@ -1802,7 +1731,6 @@ VALUES TO VERIFY:
        ============================================================ -->
   <div class="warning-bar">
     This page and your special offer expire in <span class="countdown" id="topCountdown">--h --m --s</span>.
-    <span class="date-stamp" id="dateStamp">— closes [date loading]</span>
   </div>
 
   <!-- ============================================================
@@ -1889,25 +1817,26 @@ VALUES TO VERIFY:
   </section>
 
   <!-- ============================================================
-       3.15 JEFFREY — AUTHORITY / "BEST IN THE BUSINESS"
+       3.15 JEFFREY — AUTHORITY (matches "Inside your Manifesting Membership" pattern)
        ============================================================ -->
-  <section class="section" style="padding: 64px 0;">
+  <section class="section alt">
     <div class="container">
-
-      <!-- Unified trainer card -->
-      <div class="trainer-card">
-        <img class="trainer-photo" src="https://storyblok-cdn.mindvalley.com/f/60579/700x760/4314cdd654/du_sp_author-m.jpg?quality=85&auto=webp" alt="Jeffrey Allen, energy mastery teacher">
+      <div class="trainer-grid">
         <div class="trainer-content">
           <span class="eyebrow">Who's teaching you</span>
-          <h2 class="tc-h">The energy teacher <em class="purple">1.6 million students</em> chose over everyone else.</h2>
-          <p class="tc-bio">He's not the loudest voice in the energy space — he's the one the loudest voices quote. 15 years of training: clairvoyance, healing apprenticeships, trance-mediumship, clairvoyant teacher training. Then he reverse-engineered all of it into a system <strong>an ordinary working adult can actually run.</strong></p>
+          <h2>The energy teacher <em class="italic">1.6 million students</em> chose over everyone else.</h2>
+          <p class="lede">He's not the loudest voice in the energy space — he's the one the loudest voices quote. 15 years of training: clairvoyance, healing apprenticeships, trance-mediumship, clairvoyant teacher training. Then he reverse-engineered all of it into a system <strong>an ordinary working adult can actually run.</strong></p>
 
-          <div class="trainer-stats">
-            <div class="stat"><div class="num">1.6M+</div><div class="label">Students taught</div></div>
-            <div class="stat"><div class="num">4.9 / 5</div><div class="label">Average rating</div></div>
-            <div class="stat"><div class="num">15 yrs</div><div class="label">Of training</div></div>
-            <div class="stat"><div class="num">100K+</div><div class="label">5-star reviews</div></div>
+          <hr class="trainer-div">
+
+          <div class="trainer-stats-inline">
+            <div class="trainer-stat"><div class="num">1.6M+</div><div class="label">Students taught</div></div>
+            <div class="trainer-stat"><div class="num">4.9 / 5</div><div class="label">Average rating</div></div>
+            <div class="trainer-stat"><div class="num">15 yrs</div><div class="label">Of training</div></div>
+            <div class="trainer-stat"><div class="num">100K+</div><div class="label">5-star reviews</div></div>
           </div>
+
+          <hr class="trainer-div">
 
           <div class="trainer-press-inline">
             <span class="label">Featured on</span>
@@ -1920,6 +1849,8 @@ VALUES TO VERIFY:
             </div>
           </div>
         </div>
+
+        <img class="trainer-photo" src="https://storyblok-cdn.mindvalley.com/f/60579/700x760/4314cdd654/du_sp_author-m.jpg?quality=85&auto=webp" alt="Jeffrey Allen, energy mastery teacher">
       </div>
     </div>
   </section>
@@ -1932,7 +1863,7 @@ VALUES TO VERIFY:
       <div class="section-head">
         <span class="eyebrow">The Engineer's System for Spiritual Energy</span>
         <h2 class="h2">Why Jeffrey's work works <em class="italic">faster, deeper, and more reliably</em> than any other energy training.</h2>
-        <p class="lede">Jeffrey was a U.S. Department of Energy software engineer before he became one of the world's most-followed energy teachers. He took 15+ years of clairvoyant training, healing apprenticeships, and trance-mediumship — and reverse-engineered all of it into a sequence the average working adult can actually run.</p>
+        <p class="lede">Three things make this protocol different from every other energy training on the market. Each one explains why the average student feels a measurable shift in <strong>Week 1, not Year 5.</strong></p>
       </div>
 
       <div class="mechanism-grid">
@@ -2262,7 +2193,7 @@ VALUES TO VERIFY:
       </div>
 
       <div class="stories-grid">
-        <article class="story featured">
+        <article class="story">
           <div class="story-head">
             <div class="story-photo" style="background-image: url('https://res.cloudinary.com/mindvalley/image/fetch/f_auto,q_auto,w_400,h_400,c_fill,dpr_1.7/https://storage.googleapis.com/mv-stories/7016/20191008-_swm9471.jpg');"></div>
             <div class="story-meta">
@@ -2275,7 +2206,7 @@ VALUES TO VERIFY:
           <div class="story-tag">↗ Income · Career · Health</div>
         </article>
 
-        <article class="story featured">
+        <article class="story">
           <div class="story-head">
             <div class="story-photo" style="background-image: url('https://res.cloudinary.com/mindvalley/image/fetch/f_auto,q_auto,w_400,h_400,c_fill,dpr_1.7/https://storage.googleapis.com/mv-stories/16062/psx_20210206_143432.jpg');"></div>
             <div class="story-meta">
@@ -2505,7 +2436,7 @@ VALUES TO VERIFY:
         <div class="price-line"><strong>Manifesting Membership:</strong> $199/yr <span class="strike">$299</span></div>
         <div class="countdown-line">Offer expires in <span id="bottomCountdown">--h --m --s</span> · 15-day refund</div>
       </div>
-      <a href="#order" class="cta-orange">Join now</a>
+      <a href="#order" class="cta-orange">Get Instant Access</a>
     </div>
   </div>
 
@@ -2545,13 +2476,6 @@ VALUES TO VERIFY:
       document.querySelectorAll('#topCountdown,#bottomCountdown').forEach(el => el.textContent = display);
     }
 
-    // Hardcoded date stamp (Walker — replace relative time with absolute)
-    const closeStr = CART_CLOSE_AT.toLocaleString('en-US', {
-      weekday: 'long', month: 'short', day: 'numeric',
-      hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
-    });
-    const dateEl = document.getElementById('dateStamp');
-    if (dateEl) dateEl.textContent = `— closes ${closeStr}`;
     tick();
     setInterval(tick, 1000);
 
