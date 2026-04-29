@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+DUALITY DROP-DOWN — IDEAL VERSION (full expert-panel feedback applied)
+================================================================================
+Built: 2026-04-29 · Author: Claude
+Part of: /Mindvalley_Master_Funnel/04-dropdown/
+Sister pages (next to build): 01-landing, 02-thank-you, 03-webinar, 05-special-offer, 06-checkout, 07-confirmation
+
+Brand fidelity:
+  · Colors: #7a12d4 purple, #ff931f→#ed6325 orange CTA, #1d1d1f charcoal, #f9f7fc lavender
+  · Font: Sharp Grotesk (loaded via Mindvalley CDN @font-face)
+  · Images: real Storyblok CDN URLs (Jeffrey portrait, program covers, hero bg, press cards, refund badge)
+  · Components: matches mv-* design DNA (rounded-3xl cards, rounded-full buttons, generous spacing)
+
+Conversion restructure (v3 was 18 sections of production page; v4 compresses to 9 for warm post-webinar traffic):
+  1. Warning bar (72h real countdown)
+  2. Hero + offer stack above the fold
+  3. Take-away ("say maybe" — Vishen's exact close)
+  4. Inside your pathway (real program covers grid)
+  5. Wall of 6 testimonials (Mfon + Haylee tagged "as Vishen mentioned")
+  6. Reasons-why (7 numbered)
+  7. Order menu (single recommended plan + guarantee)
+  8. 3 objection cards + FAQ
+  9. Final CTA + P.S./P.P.S.
+  + Sticky bottom
+
+VALUES TO VERIFY:
+  · Pricing: $199/yr (was $299) · or $49/mo
+  · CART_CLOSE_AT: 12hrs from now (PAGE expires; underlying discount remains for cart-window)
+  · Marketing clearance for the 6 testimonials
+  · Refund URL + Stripe checkout link
+================================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Duality with Jeffrey Allen — Webinar Special Offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7a12d4">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Mindvalley Sharp Grotesk fonts via production CDN -->
+  <link rel="preconnect" href="https://storyblok-assets.mindvalley.com" crossorigin>
+  <link rel="preconnect" href="https://storyblok-cdn.mindvalley.com" crossorigin>
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+  <style>
+    /* ============================================================
+       Sharp Grotesk — loaded directly from Mindvalley CDN
+       ============================================================ */
+    @font-face {
+      font-family: 'Grotesk-Regular';
+      font-display: swap;
+      src: url('https://storyblok-assets.mindvalley.com/fonts/SharpGroteskCyrBook-19.ed0b68c.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Grotesk-Medium';
+      font-display: swap;
+      src: url('https://storyblok-assets.mindvalley.com/fonts/SharpGroteskCyrMedium-20.36349e7.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Grotesk-Semibold';
+      font-display: swap;
+      src: url('https://storyblok-assets.mindvalley.com/fonts/SharpGroteskCyrSemibold-20.3dc06bb.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Grotesk-RegularItalic';
+      font-display: swap;
+      font-style: italic;
+      src: url('https://storyblok-assets.mindvalley.com/fonts/SharpGroteskCyrBookItl-19.4bf9ca9.woff2') format('woff2');
+    }
+
+    /* ============================================================
+       Tokens (Mindvalley brand)
+       ============================================================ */
+    :root {
+      --brand: #7a12d4;
+      --brand-dark: #5a0fa8;
+      --brand-light: #ba62fd;
+      --brand-bg: #f9f7fc;
+      --brand-bg-2: #f5e7ff;
+      --brand-bg-3: #f5f0fa;
+
+      --orange: #ff931f;
+      --orange-dark: #ed6325;
+      --orange-bg: #fff4e8;
+
+      --ink: #1d1d1f;
+      --ink-soft: #292d38;
+      --ink-mid: #4b5563;
+      --ink-dim: #6b7280;
+      --line: #ebedef;
+      --line-soft: #f3f4f6;
+      --apple-bg: #f5f5f7;
+
+      --green: #6dd29a;
+      --gold: #97700b;
+
+      --serif: 'Grotesk-Medium', Verdana, sans-serif;
+      --sans: 'Grotesk-Regular', Verdana, sans-serif;
+      --italic: 'Grotesk-RegularItalic', Verdana, sans-serif;
+
+      --max: 1140px;
+      --pad: clamp(20px, 4vw, 40px);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* Typography (matches Mindvalley scale) */
+    .h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5.4vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -.012em;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -.005em;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .h3 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.4vw, 28px);
+      line-height: 1.2;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .h4 {
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .body-lg { font-size: 19px; line-height: 1.55; color: var(--ink-mid); }
+    .body { font-size: 16px; line-height: 1.55; color: var(--ink-mid); }
+    .body-sm { font-size: 14px; line-height: 1.5; color: var(--ink-dim); }
+    .eyebrow {
+      font-family: var(--serif);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    em.purple { color: var(--brand); font-style: normal; }
+    em.italic { font-family: var(--italic); color: var(--brand); }
+
+    /* ============================================================
+       1. WARNING BAR (sticky)
+       ============================================================ */
+    .warning-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: #fff;
+      padding: 11px var(--pad);
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: .01em;
+    }
+    .warning-bar .countdown {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 700;
+      color: #ffe066;
+      letter-spacing: .03em;
+    }
+    .warning-bar strong { color: #ffe066; font-weight: 600; }
+    @media (max-width: 600px) { .warning-bar { font-size: 12.5px; padding: 9px 14px; } }
+
+    /* ============================================================
+       2. HERO + STACK CARD (above the fold)
+       ============================================================ */
+    .hero {
+      padding: 60px 0 72px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(122, 18, 212, .08), transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(255, 147, 31, .06), transparent 50%),
+        #fff;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+    .hero-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-bg-2);
+      color: var(--brand);
+      font-family: var(--serif);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .hero-banner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px 12px 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px -8px rgba(15, 19, 26, .08);
+      max-width: 380px;
+    }
+    .hero-banner img {
+      width: 80px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .hero-banner .b-text { min-width: 0; }
+    .hero-banner .b-eyebrow {
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .hero-banner .b-title {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 1px;
+    }
+    .hero-banner .b-meta {
+      font-size: 11.5px;
+      color: var(--ink-dim);
+    }
+    .hero-eyebrow-pill::before { content: '✦'; color: var(--orange); }
+    .hero h1.hero-h {
+      font-size: clamp(36px, 5.2vw, 60px);
+      line-height: 1.05;
+      letter-spacing: -.012em;
+      margin-bottom: 18px;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+      margin-bottom: 28px;
+      max-width: 56ch;
+    }
+    .hero-sub strong { color: var(--ink); font-weight: 500; }
+
+    /* Trust strip — bold inline numbers, no boxes */
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 32px;
+      align-items: center;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .trust-strip .trust-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 15px;
+      color: var(--ink-mid);
+      font-weight: 500;
+    }
+    .trust-strip .trust-item strong {
+      font-family: var(--serif);
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 19px;
+      letter-spacing: -.005em;
+    }
+
+    /* ----- THE STACK CARD (the conversion engine) ----- */
+    .stack-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px 32px 28px;
+      box-shadow:
+        0 24px 64px -20px rgba(122, 18, 212, .25),
+        0 4px 14px rgba(15, 19, 26, .04);
+    }
+    .stack-card .stack-head {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 6px;
+    }
+    .stack-card .stack-head h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .stack-card .stack-head .pill {
+      background: var(--brand-bg-2);
+      color: var(--brand);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 999px;
+    }
+    .stack-card .stack-sub {
+      font-size: 13px;
+      color: var(--ink-dim);
+      margin-bottom: 18px;
+    }
+    .stack-list { list-style: none; }
+    .stack-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+    .stack-list li:last-child { border-bottom: none; }
+    .stack-list .item { flex: 1; }
+    .stack-list .item::before {
+      content: '✓';
+      color: var(--brand);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    .stack-list .val {
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      font-size: 13.5px;
+      font-weight: 500;
+      align-self: center;
+    }
+    .totals {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .total-was {
+      font-size: 13px;
+      color: var(--ink-dim);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .total-now {
+      font-family: var(--serif);
+      font-size: 40px;
+      color: var(--ink);
+      letter-spacing: -.015em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .total-now .currency { color: var(--brand); font-size: .65em; vertical-align: super; }
+    .total-now .num { color: var(--brand); }
+    .total-pay { font-size: 13.5px; color: var(--ink-dim); }
+    .total-pay strong { color: var(--ink); }
+
+    /* CTA — Mindvalley orange ordermenu primary */
+    .cta-orange {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 22px;
+      padding: 17px 26px;
+      background: linear-gradient(180deg, var(--orange) 0%, var(--orange-dark) 100%);
+      color: #fff !important;
+      font-family: var(--serif);
+      font-size: 17px;
+      letter-spacing: .015em;
+      text-decoration: none !important;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 14px 32px -10px rgba(255, 147, 31, .55);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .cta-orange:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px -8px rgba(255, 147, 31, .7);
+    }
+    .cta-orange:active { transform: translateY(0); }
+
+    .guarantee-row {
+      margin-top: 14px;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      font-size: 12px; color: var(--ink-dim);
+      flex-wrap: wrap;
+    }
+    .guarantee-row img { height: 28px; }
+
+    /* ============================================================
+       3. TAKE-AWAY ("say maybe")
+       ============================================================ */
+    section.takeaway {
+      padding: 56px var(--pad);
+      background: var(--brand-bg);
+    }
+    .takeaway-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      border-left: 4px solid var(--brand);
+      padding: 36px 40px;
+      box-shadow: 0 12px 36px -16px rgba(15, 19, 26, .1);
+    }
+    .takeaway-card .quote-mark {
+      font-family: var(--serif);
+      font-size: 56px;
+      line-height: 0;
+      color: var(--brand);
+      vertical-align: top;
+      display: inline-block;
+      margin: 18px 6px 0 0;
+    }
+    .takeaway-card p {
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.45;
+      color: var(--ink);
+      font-weight: 400;
+      display: inline;
+    }
+    .takeaway-card p em { color: var(--brand); font-family: var(--italic); font-style: italic; }
+    .takeaway-card cite {
+      display: block;
+      margin-top: 18px;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 13px;
+      color: var(--ink-dim);
+      letter-spacing: .03em;
+    }
+
+    /* ============================================================
+       4. INSIDE YOUR PATHWAY (real program covers grid)
+       ============================================================ */
+    section.section { padding: 80px 0; }
+    section.section.alt { background: var(--apple-bg); }
+    section.section.lavender { background: var(--brand-bg); }
+
+    .section-head { margin-bottom: 36px; max-width: 800px; }
+    .section-head .eyebrow { display: inline-block; margin-bottom: 14px; }
+    .section-head h2 { margin-bottom: 14px; max-width: 24ch; }
+    .section-head .lede { font-size: 18px; color: var(--ink-mid); max-width: 60ch; }
+
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px) { .pathway-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px) { .pathway-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .program {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+      border: 1px solid var(--line);
+    }
+    .program:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px -16px rgba(122, 18, 212, .25);
+    }
+    .program img.cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .program .meta {
+      padding: 14px 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .program .author-chip {
+      width: 36px; height: 48px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .program .meta-text { min-width: 0; }
+    .program .title {
+      font-family: var(--serif);
+      font-size: 13.5px;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .program .author {
+      font-size: 11.5px;
+      color: var(--ink-dim);
+      letter-spacing: .02em;
+    }
+    .program .rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+      font-size: 11.5px;
+      color: var(--ink-mid);
+    }
+    .program .rating .stars {
+      color: #f5b800;
+      letter-spacing: 1px;
+      font-size: 12px;
+      line-height: 1;
+    }
+    .program .rating .num {
+      color: var(--ink);
+      font-weight: 600;
+      margin-left: 2px;
+    }
+    .program.featured .rating { font-size: 13px; }
+    .program.featured .rating .stars { font-size: 14px; }
+    .program-outcome {
+      padding: 0 14px 16px;
+      font-family: var(--serif);
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      line-height: 1.4;
+      border-top: 1px dashed var(--line);
+      padding-top: 12px;
+      margin: 0 14px;
+    }
+    .program.featured .program-outcome {
+      font-size: 15px;
+      padding: 14px 18px 4px;
+      margin: 0 18px 18px;
+      line-height: 1.45;
+    }
+
+    /* ============================================================
+       INSIDE DUALITY — 7-week phase cards
+       ============================================================ */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 36px;
+    }
+    @media (max-width: 800px) { .phase-grid { grid-template-columns: 1fr; } }
+    .phase-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px 28px;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      position: relative;
+    }
+    .phase-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand);
+      box-shadow: 0 18px 40px -16px rgba(122, 18, 212, .25);
+    }
+    .phase-num {
+      font-family: var(--serif);
+      font-size: 56px;
+      color: var(--brand);
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin-bottom: 6px;
+      opacity: .85;
+    }
+    .phase-weeks {
+      font-family: var(--serif);
+      font-size: 11.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .phase-card h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .phase-list { list-style: none; padding: 0; margin: 0; }
+    .phase-list li {
+      padding: 9px 0 9px 22px;
+      position: relative;
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .phase-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 17px;
+      width: 6px; height: 6px;
+      background: var(--brand);
+      border-radius: 50%;
+    }
+    .meditations-callout {
+      margin-top: 32px;
+      padding: 28px 32px;
+      background: linear-gradient(135deg, var(--brand-bg-2), var(--orange-bg));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    @media (max-width: 700px) { .meditations-callout { flex-direction: column; text-align: center; padding: 24px; } }
+    .meditations-callout .eyebrow { display: block; margin-bottom: 4px; color: var(--orange-dark); }
+    .meditations-callout h4 {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .meditations-callout p {
+      font-size: 14.5px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    /* TRANSFORMATION — 12 months from now */
+    section.transformation {
+      padding: 80px 0;
+      background: linear-gradient(180deg, var(--brand-bg) 0%, var(--brand-bg-2) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    section.transformation::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(122, 18, 212, .1), transparent 50%),
+        radial-gradient(circle at 15% 85%, rgba(255, 147, 31, .05), transparent 55%);
+      pointer-events: none;
+    }
+    section.transformation .container { position: relative; }
+    section.transformation .section-head {
+      text-align: center;
+      margin: 0 auto 48px;
+      max-width: 760px;
+    }
+    section.transformation .section-head h2,
+    section.transformation .section-head .lede {
+      max-width: none;
+      margin-left: auto; margin-right: auto;
+    }
+    .tx-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) { .tx-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .tx-grid { grid-template-columns: 1fr; } }
+    .tx-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px 30px;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .tx-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--brand);
+      box-shadow: 0 18px 40px -16px rgba(122, 18, 212, .25);
+    }
+    .tx-card .tx-area {
+      font-family: var(--serif);
+      font-size: 11.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .tx-card h4 {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .tx-card p {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+    .tx-card p strong { color: var(--ink); font-weight: 600; }
+    .tx-card p em { font-family: var(--italic); font-style: italic; color: var(--brand); }
+
+    .tx-closer {
+      max-width: 640px;
+      margin: 40px auto 0;
+      padding: 28px 32px;
+      text-align: center;
+      background: rgba(255, 255, 255, .6);
+      border: 1px dashed rgba(122, 18, 212, .3);
+      border-radius: 18px;
+    }
+    .tx-closer p {
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--ink);
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .tx-closer p em {
+      color: var(--brand);
+      font-style: italic;
+      font-family: var(--italic);
+    }
+
+    /* MECHANISM (Why this method works) */
+    .mechanism-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 36px;
+    }
+    @media (max-width: 800px) { .mechanism-grid { grid-template-columns: 1fr; } }
+    .mech-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      position: relative;
+    }
+    .mech-card .mech-num {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .mech-card h4 {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .mech-card p {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+    .mech-stat {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: var(--brand-bg-2);
+      border-radius: 10px;
+      font-size: 13.5px;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .mech-stat strong { color: var(--brand); font-weight: 700; }
+
+    /* SCIENCE PROOF block — under mechanism */
+    .science-proof {
+      margin-top: 48px;
+      padding: 36px 36px 32px;
+      background: linear-gradient(135deg, #0f131a 0%, #1a1f2e 100%);
+      border-radius: 24px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .science-proof::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(186, 98, 253, .25), transparent 60%);
+      pointer-events: none;
+    }
+    .science-proof .sp-head { position: relative; margin-bottom: 28px; }
+    .science-proof .sp-eyebrow {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 11.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand-light);
+      font-weight: 700;
+      padding: 6px 12px;
+      background: rgba(186, 98, 253, .15);
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .science-proof h3 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 30px);
+      font-weight: 500;
+      line-height: 1.2;
+      max-width: 22ch;
+    }
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    @media (max-width: 800px) { .science-grid { grid-template-columns: 1fr; } }
+    .science-item {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+    }
+    .science-num {
+      font-family: var(--serif);
+      font-size: 44px;
+      font-weight: 600;
+      color: var(--brand-light);
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin-bottom: 14px;
+    }
+    .science-text {
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, .85);
+      line-height: 1.55;
+    }
+    .science-cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .5);
+      font-style: italic;
+    }
+
+    /* TWO CAMPS segmentation */
+    .camps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      max-width: 880px;
+      margin: 0 auto 48px;
+    }
+    @media (max-width: 700px) { .camps-grid { grid-template-columns: 1fr; } }
+    .camp {
+      padding: 26px 28px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .camp .camp-label {
+      font-family: var(--serif);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .camp h5 {
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--ink);
+      line-height: 1.3;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .camp p {
+      font-size: 14.5px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    /* ORDER BUMP (Brunson-style) */
+    .order-bump {
+      background: #fffbe8;
+      border: 2px dashed #f5c918;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      cursor: pointer;
+      transition: background .15s ease;
+    }
+    .order-bump:hover { background: #fff5d6; }
+    .order-bump label {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+    .order-bump input[type="checkbox"] {
+      width: 20px; height: 20px;
+      accent-color: var(--brand);
+      flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .order-bump .bump-text { flex: 1; }
+    .order-bump .bump-title {
+      font-family: var(--serif);
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .order-bump .bump-title strong { color: var(--brand); }
+    .order-bump .bump-meta {
+      font-size: 12.5px;
+      color: var(--ink-dim);
+      line-height: 1.45;
+    }
+
+    /* RECIPROCITY AUDIO GIFT (Walker) */
+    .reciprocity-audio {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      background: linear-gradient(135deg, var(--brand-bg-2) 0%, #fff 100%);
+      border: 1px solid rgba(122, 18, 212, .2);
+      border-radius: 24px;
+      box-shadow: 0 12px 32px -16px rgba(122, 18, 212, .2);
+    }
+    .reciprocity-audio .ra-eyebrow {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 700;
+      background: #fff;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .reciprocity-audio h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .reciprocity-audio audio {
+      width: 100%;
+      margin: 6px 0 12px;
+      border-radius: 999px;
+    }
+    .reciprocity-audio p {
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .reciprocity-audio p em { font-family: var(--italic); color: var(--brand); font-style: italic; }
+
+    /* Date stamp under countdown */
+    .date-stamp {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 12.5px;
+      opacity: .85;
+    }
+    @media (max-width: 600px) {
+      .date-stamp { display: block; margin: 4px 0 0; font-size: 11.5px; }
+    }
+
+    /* Featured program (Duality) */
+    .program.featured {
+      grid-column: span 2;
+      grid-row: span 2;
+      border: 2px solid var(--brand);
+      box-shadow: 0 16px 40px -12px rgba(122, 18, 212, .25);
+      position: relative;
+    }
+    .program.featured::after {
+      content: 'YOU\'RE STARTING HERE';
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--brand);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+    .program.featured img.cover { aspect-ratio: 4/3; }
+    .program.featured .meta { padding: 18px 18px 20px; }
+    .program.featured .author-chip { width: 48px; height: 64px; }
+    .program.featured .title { font-size: 18px; }
+    .program.featured .author { font-size: 13px; }
+    @media (max-width: 600px) {
+      .program.featured { grid-column: span 2; grid-row: auto; }
+      .program.featured::after { font-size: 9px; padding: 4px 8px; }
+    }
+
+    /* ============================================================
+       5. WALL OF FACES (testimonials)
+       ============================================================ */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) { .stories-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .stories-grid { grid-template-columns: 1fr; } }
+
+    .story {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color .25s ease, transform .2s ease;
+    }
+    .story:hover { border-color: var(--brand); transform: translateY(-2px); }
+    .story.featured {
+      border-color: var(--brand);
+      background: linear-gradient(180deg, #fff, var(--brand-bg-2) 220%);
+    }
+    .story-head {
+      display: flex; gap: 14px; align-items: center; margin-bottom: 16px;
+    }
+    .story-photo {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      border: 2px solid var(--brand-bg-2);
+      flex-shrink: 0;
+    }
+    .story-meta .as-mentioned {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .story-meta .name {
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .story-meta .role { font-size: 12.5px; color: var(--ink-dim); }
+    .story-quote {
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--ink);
+      flex: 1;
+      font-weight: 400;
+    }
+    .story-quote::before, .story-quote::after { color: var(--brand); }
+    .story-quote::before { content: '"'; }
+    .story-quote::after { content: '"'; }
+    .story-tag {
+      margin-top: 16px; padding-top: 14px;
+      border-top: 1px dashed var(--line);
+      font-size: 12px;
+      color: var(--brand);
+      letter-spacing: .03em;
+    }
+
+    /* ============================================================
+       6. REASONS-WHY (numbered)
+       ============================================================ */
+    .reasons-wrap { max-width: 760px; margin: 0 auto; }
+    .reasons-list { list-style: none; counter-reset: reason; }
+    .reasons-list li {
+      counter-increment: reason;
+      position: relative;
+      padding: 20px 0 20px 56px;
+      border-bottom: 1px solid var(--line);
+      font-size: 16.5px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+    .reasons-list li strong { color: var(--ink); font-weight: 600; }
+    .reasons-list li::before {
+      content: counter(reason);
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--brand);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 50%;
+    }
+
+    /* ============================================================
+       7. ORDER MENU
+       ============================================================ */
+    .order-wrap { max-width: 880px; margin: 0 auto; }
+    .plans {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 600px) { .plans { grid-template-columns: 1fr; } }
+    .plan {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px 28px 28px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .plan.recommended {
+      border: 2px solid var(--brand);
+      box-shadow: 0 16px 40px -12px rgba(122, 18, 212, .3);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--brand);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+    .plan-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .plan-was {
+      font-size: 13px;
+      color: var(--ink-dim);
+      text-decoration: line-through;
+      min-height: 18px;
+    }
+    .plan-price {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 500;
+      color: var(--brand);
+      line-height: 1;
+      margin: 8px 0 6px;
+      letter-spacing: -.012em;
+    }
+    .plan-price .per {
+      font-size: 14px;
+      color: var(--ink-dim);
+      font-family: var(--sans);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    .plan-meta { font-size: 13px; color: var(--ink-dim); margin-bottom: 16px; }
+    .plan-includes {
+      flex: 1;
+      font-size: 13px;
+      color: var(--ink-soft);
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
+      line-height: 1.55;
+    }
+    .plan .cta-orange { margin-top: 18px; }
+    .plan .cta-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 18px;
+      padding: 15px 24px;
+      background: #fff;
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: all .15s ease;
+    }
+    .plan .cta-secondary:hover { background: var(--ink); color: #fff; }
+
+    /* Guarantee block */
+    .guarantee-block {
+      max-width: 880px;
+      margin: 36px auto 0;
+      background: linear-gradient(135deg, var(--brand-bg-2), #fff);
+      border: 1px solid var(--brand-bg-2);
+      border-radius: 24px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    @media (max-width: 700px) { .guarantee-block { flex-direction: column; text-align: center; padding: 28px; } }
+    .guarantee-block img { width: 110px; height: auto; flex-shrink: 0; }
+    .guarantee-block .text h4 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .guarantee-block .text p {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    .payment-strip {
+      margin-top: 28px;
+      text-align: center;
+    }
+    .payment-strip img { display: inline-block; height: 32px; }
+
+    /* ============================================================
+       8. OBJECTIONS + FAQ
+       ============================================================ */
+    .obj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 800px) { .obj-grid { grid-template-columns: 1fr; } }
+    .obj-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+    }
+    .obj-card h5 {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--brand);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .obj-card p {
+      font-size: 14.5px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0;
+    }
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px;
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      color: var(--brand);
+      font-weight: 300;
+      font-size: 26px;
+      transition: transform .2s ease;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-top: 14px;
+      max-width: 64ch;
+    }
+
+    /* ============================================================
+       9. FINAL CTA + P.S.
+       ============================================================ */
+    .final {
+      text-align: center;
+      padding: 100px 0;
+      background:
+        radial-gradient(ellipse at center, var(--brand-bg-2), #fff 70%);
+    }
+    .final h2 {
+      font-size: clamp(34px, 4.8vw, 54px);
+      max-width: 18ch;
+      margin: 0 auto 22px;
+    }
+    .final .lede {
+      font-size: 18px;
+      color: var(--ink-mid);
+      max-width: 56ch;
+      margin: 0 auto 32px;
+    }
+    .final .cta-orange { max-width: 420px; margin: 0 auto; }
+    .final .micro {
+      font-size: 13px;
+      color: var(--ink-dim);
+      margin-top: 14px;
+    }
+
+    .ps-block {
+      max-width: 640px;
+      margin: 64px auto 0;
+      padding: 32px 36px;
+      background: #fff;
+      border-left: 4px solid var(--brand);
+      border-radius: 0 16px 16px 0;
+      text-align: left;
+      box-shadow: 0 12px 36px -16px rgba(15, 19, 26, .1);
+    }
+    .ps-block p {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .ps-block p:last-child { margin-bottom: 0; }
+    .ps-block strong { color: var(--brand); font-weight: 600; }
+    .ps-block em { font-family: var(--italic); font-style: italic; color: var(--ink-mid); }
+
+    /* ============================================================
+       STICKY BOTTOM
+       ============================================================ */
+    .sticky-btm {
+      position: fixed;
+      bottom: -200px;
+      left: 0; right: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 -6px 24px rgba(15, 19, 26, .12);
+      padding: 12px var(--pad);
+      transition: bottom .35s ease;
+    }
+    .sticky-btm.visible { bottom: 0; }
+    .sticky-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .sticky-text { flex: 1; min-width: 0; }
+    .sticky-text .price-line {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .sticky-text .price-line strong { color: var(--brand); }
+    .sticky-text .price-line .strike { color: var(--ink-dim); text-decoration: line-through; font-weight: 400; font-size: 12.5px; margin-left: 6px; }
+    .sticky-text .countdown-line {
+      font-size: 12px;
+      color: var(--ink-dim);
+      margin-top: 2px;
+    }
+    .sticky-text .countdown-line span {
+      font-family: ui-monospace, monospace;
+      color: var(--brand);
+      font-weight: 600;
+    }
+    .sticky-btm .cta-orange {
+      width: auto;
+      margin: 0;
+      padding: 13px 26px;
+      font-size: 14.5px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .sticky-text .countdown-line { display: none; }
+      .sticky-btm .cta-orange { padding: 11px 18px; font-size: 13.5px; }
+    }
+
+    /* Footer */
+    footer {
+      padding: 36px 16px 96px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-dim);
+      border-top: 1px solid var(--line);
+    }
+    footer a { color: var(--brand); }
+
+    /* Origin story (Jeffrey bio) */
+    .origin-grid {
+      max-width: 880px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .origin-photo {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 16px 40px -16px rgba(15, 19, 26, .25);
+    }
+    @media (max-width: 700px) {
+      .origin-grid { grid-template-columns: 1fr; gap: 18px; }
+      .origin-photo { max-width: 140px; }
+    }
+
+    /* utility */
+    .text-center { text-align: center; }
+    .mt-32 { margin-top: 32px; }
+    .mt-48 { margin-top: 48px; }
+
+    /* ============================================================
+       MOBILE OPTIMIZATION — 80% of traffic is mobile
+       ============================================================ */
+    @media (max-width: 700px) {
+      :root { --pad: 16px; }
+
+      .hero { padding: 32px 0 40px; }
+      .hero-grid { gap: 24px; }
+      .hero h1.hero-h { font-size: 30px; line-height: 1.08; }
+      .hero-sub { font-size: 16px; line-height: 1.5; }
+      .hero-eyebrow-pill { font-size: 11px; padding: 6px 12px; margin-bottom: 14px; }
+
+      .hero-banner { max-width: none; padding: 10px 12px 10px 10px; gap: 12px; margin-bottom: 18px; }
+      .hero-banner img { width: 64px; }
+      .hero-banner .b-title { font-size: 15px; }
+      .hero-banner .b-meta { font-size: 11px; }
+      .hero-banner .b-eyebrow { font-size: 9.5px; }
+
+      .stack-card { padding: 22px 20px 20px; border-radius: 18px; }
+      .stack-card h3 { font-size: 19px; }
+      .stack-list li { font-size: 13.5px; padding: 10px 0; gap: 10px; }
+      .stack-list .val { font-size: 12.5px; }
+      .total-now { font-size: 32px; }
+
+      .cta-orange { padding: 16px 22px; font-size: 16px; min-height: 52px; }
+      .cta-secondary { padding: 14px 22px; font-size: 15px; min-height: 50px; }
+
+      .trust-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
+        margin-top: 24px;
+        padding-top: 18px;
+      }
+      .trust-strip .trust-item { font-size: 13px; }
+      .trust-strip .trust-item strong { font-size: 16px; }
+
+      section.section { padding: 48px 0; }
+      .section-head { margin-bottom: 24px; }
+      .section-head h2 { margin-bottom: 12px; }
+      .h2 { font-size: 26px; line-height: 1.15; }
+      .h3 { font-size: 22px; }
+      .section-head .lede { font-size: 15.5px; }
+
+      section.takeaway { padding: 36px var(--pad); }
+      .takeaway-card { padding: 24px 22px; border-radius: 18px; }
+      .takeaway-card p { font-size: 17px; line-height: 1.4; }
+      .takeaway-card .quote-mark { font-size: 40px; margin: 12px 4px 0 0; }
+
+      .reciprocity-audio { padding: 20px 18px; border-radius: 18px; }
+      .reciprocity-audio h3 { font-size: 16px; }
+      .reciprocity-audio p { font-size: 13px; }
+
+      .mech-card { padding: 22px 20px; border-radius: 18px; }
+      .mech-card h4 { font-size: 18px; }
+      .mech-card p { font-size: 14px; }
+      .mech-stat { padding: 10px 12px; font-size: 13px; }
+
+      .phase-card { padding: 24px 22px; border-radius: 18px; }
+      .phase-num { font-size: 44px; }
+      .phase-card h3 { font-size: 21px; margin-bottom: 12px; }
+      .phase-list li { font-size: 14px; padding: 7px 0 7px 18px; }
+      .phase-list li::before { top: 14px; }
+
+      .meditations-callout { padding: 22px 20px; border-radius: 18px; }
+      .meditations-callout h4 { font-size: 19px; }
+      .meditations-callout p { font-size: 13.5px; }
+
+      .pathway-grid { gap: 10px; }
+      .program { border-radius: 14px; }
+      .program .meta { padding: 12px 12px 10px; gap: 8px; }
+      .program .author-chip { width: 32px; height: 42px; }
+      .program .title { font-size: 12.5px; }
+      .program .author { font-size: 10.5px; }
+      .program .rating { font-size: 10.5px; }
+      .program .rating .stars { font-size: 11px; }
+      .program-outcome { font-size: 11.5px; padding-top: 10px; padding-bottom: 12px; margin: 0 12px; line-height: 1.35; }
+      .program.featured::after { font-size: 9px; padding: 4px 8px; top: 10px; left: 10px; }
+      .program.featured .meta { padding: 14px 14px 14px; }
+      .program.featured .title { font-size: 15px; }
+      .program.featured .author { font-size: 12px; }
+
+      .story { padding: 22px 20px; border-radius: 18px; }
+      .story-head { gap: 10px; margin-bottom: 12px; }
+      .story-photo { width: 48px; height: 48px; }
+      .story-meta .name { font-size: 15.5px; }
+      .story-meta .role { font-size: 11.5px; }
+      .story-meta .as-mentioned { font-size: 9.5px; }
+      .story-quote { font-size: 16px; line-height: 1.4; }
+
+      .ms-grid { gap: 10px; }
+      .ms-card { padding: 18px 14px; }
+      .ms-num { font-size: 28px; }
+      .ms-label { font-size: 12px; }
+
+      section.transformation { padding: 48px 0; }
+      .tx-card { padding: 22px 20px; border-radius: 18px; }
+      .tx-card .tx-area { font-size: 10px; margin-bottom: 8px; }
+      .tx-card h4 { font-size: 19px; }
+      .tx-card p { font-size: 14px; }
+      .tx-closer { padding: 20px 22px; margin-top: 24px; border-radius: 14px; }
+      .tx-closer p { font-size: 16px; line-height: 1.4; }
+
+      .camps-grid { gap: 12px; margin-bottom: 32px; }
+      .camp { padding: 20px 22px; border-radius: 18px; }
+      .camp h5 { font-size: 17px; }
+      .camp p { font-size: 13.5px; }
+      .reasons-list li { font-size: 14.5px; padding: 16px 0 16px 48px; }
+      .reasons-list li::before { width: 30px; height: 30px; font-size: 13px; top: 16px; }
+
+      .plan { padding: 24px 20px 20px; border-radius: 18px; }
+      .plan-name { font-size: 17px; }
+      .plan-price { font-size: 36px; }
+      .plan-meta { font-size: 12.5px; }
+      .plan-includes { font-size: 12.5px; }
+      .order-bump { padding: 14px 14px; }
+      .order-bump .bump-title { font-size: 13.5px; }
+      .order-bump .bump-meta { font-size: 11.5px; }
+
+      .guarantee-block { padding: 24px 22px; border-radius: 18px; flex-direction: column; text-align: center; gap: 18px; }
+      .guarantee-block img { width: 90px; }
+      .guarantee-block .text h4 { font-size: 19px; }
+      .guarantee-block .text p { font-size: 14px; }
+
+      .obj-grid { gap: 12px; margin-bottom: 32px; }
+      .obj-card { padding: 22px 20px; border-radius: 18px; }
+      .obj-card h5 { font-size: 16px; }
+      .obj-card p { font-size: 13.5px; }
+      .faq-item { padding: 18px 0; }
+      .faq-item summary { font-size: 16px; gap: 12px; }
+      .faq-item summary::after { font-size: 22px; }
+      .faq-item p { font-size: 14px; }
+
+      .final { padding: 64px 0; }
+      .final h2 { font-size: 28px; line-height: 1.1; }
+      .final p.lede { font-size: 16px; }
+      .final .micro { font-size: 12px; }
+      .ps-block { padding: 22px 22px; margin-top: 36px; border-radius: 0 12px 12px 0; }
+      .ps-block p { font-size: 15px; line-height: 1.55; }
+
+      .sticky-btm { padding: 10px 14px; }
+      .sticky-text .price-line { font-size: 13px; }
+      .sticky-text .price-line .strike { font-size: 11.5px; }
+      .sticky-btm .cta-orange { padding: 11px 18px; font-size: 14px; min-height: 44px; }
+
+      body { overflow-x: hidden; }
+    }
+
+    /* Very small phones */
+    @media (max-width: 380px) {
+      .hero h1.hero-h { font-size: 26px; }
+      .hero-sub { font-size: 15px; }
+      .h2 { font-size: 22px; }
+      .total-now { font-size: 28px; }
+      .stack-list li { font-size: 13px; }
+      .stack-list li .val { font-size: 11.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. WARNING BAR
+       ============================================================ -->
+  <div class="warning-bar">
+    This page and your special offer expire in <span class="countdown" id="topCountdown">--h --m --s</span>.
+    <span class="date-stamp" id="dateStamp">— closes [date loading]</span>
+  </div>
+
+  <!-- ============================================================
+       2. HERO + STACK CARD
+       ============================================================ -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: hero copy -->
+        <div>
+          <div class="hero-eyebrow-pill">This offer is for webinar attendees only</div>
+          <div class="hero-banner">
+            <img src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/a2a8370004/duality.png?quality=75&auto=webp" alt="Duality">
+            <div class="b-text">
+              <div class="b-eyebrow">Your entry program</div>
+              <div class="b-title">Duality with Jeffrey Allen</div>
+              <div class="b-meta">+ 20 more programs unlocked · 280h+ curriculum · cancel anytime</div>
+            </div>
+          </div>
+          <h1 class="hero-h">Remove obstacles. Attract synchronicities. <em class="purple">With ease.</em></h1>
+          <p class="hero-sub">
+            60 minutes was the taste — in 7 weeks, every area of your life (money, relationships, decisions, health) bends to your energy instead of the other way around. The same path took <strong>Mfon, a Texas tax lawyer,</strong> to a 50% income lift — and <strong>Haylee, a working mom of two,</strong> from anxiety 10 → 2. <strong>$100 off the Manifesting Membership</strong>, only on this page.
+          </p>
+
+          <div class="trust-strip">
+            <div class="trust-item"><strong>4.9 / 5</strong> rating</div>
+            <div class="trust-item"><strong>1.6M+</strong> students</div>
+            <div class="trust-item"><strong>94%</strong> feel the shift in Week 1</div>
+            <div class="trust-item"><strong>15-day</strong> money-back guarantee</div>
+          </div>
+        </div>
+
+        <!-- Right: STACK CARD (offer above the fold) -->
+        <div>
+          <div class="stack-card" id="join">
+            <div class="stack-head">
+              <h3>Everything you unlock today</h3>
+              <span class="pill">$100 off</span>
+            </div>
+            <p class="stack-sub">The Mindvalley Manifesting Membership is a subscription. Renews monthly or annually. Cancel anytime in one click.</p>
+
+            <ul class="stack-list">
+              <li><span class="item"><strong>Duality</strong> — Jeffrey's full 7-week energy training</span><span class="val">$499</span></li>
+              <li><span class="item"><strong>Unlocking Transcendence</strong> — Jeffrey's advanced program</span><span class="val">$499</span></li>
+              <li><span class="item">35+ guided meditations inside Duality</span><span class="val">$297</span></li>
+              <li><span class="item"><strong>The Manifesting Membership</strong> — 33+ programs (Donna Eden, Marie Diamond, Vishen, Sadhguru, Burt Goldman, Regan Hillyer + more)</span><span class="val">$10,000+</span></li>
+              <li><span class="item">200+ hours of world-class curriculum</span><span class="val">included</span></li>
+              <li><span class="item"><strong>EVE</strong> — your AI personal-growth guide</span><span class="val">$500/yr</span></li>
+              <li><span class="item">Live community + monthly events</span><span class="val">$1,200</span></li>
+              <li><span class="item"><strong>15-day money-back guarantee</strong> — try the entire membership risk-free</span><span class="val">peace of mind</span></li>
+            </ul>
+
+            <div class="totals">
+              <div style="font-size: 12.5px; color: var(--ink-soft); margin-bottom: 10px; padding: 10px 12px; background: var(--brand-bg); border-radius: 8px; line-height: 1.45;">
+                <strong style="color: var(--brand);">In-person equivalent:</strong> $4,000–$5,000 to train with Jeffrey at a retreat in Tokyo. <em>(Vishen's words on the masterclass.)</em>
+              </div>
+              <div class="total-was">Total real value: $12,995+</div>
+              <div class="total-now"><span class="currency">$</span><span class="num">199</span><span style="font-size: .35em; color: var(--ink-dim); font-family: var(--sans); margin-left: 6px; letter-spacing: 0;">/ year</span></div>
+              <div class="total-pay">or <strong>$49 / month</strong> — both renew automatically · cancel anytime</div>
+              <div style="font-size: 12px; color: var(--ink-dim); margin-top: 10px; line-height: 1.45;">
+                <strong style="color: var(--brand);">Why $100 off?</strong> You watched the masterclass live. Mindvalley would rather absorb the cost than have you walk away from this work entirely.
+              </div>
+            </div>
+
+            <a href="#order" class="cta-orange">Yes — lock in my $100 discount →</a>
+
+            <div class="guarantee-row">
+              <img src="https://res.cloudinary.com/mindvalley/image/upload/v1646192801/badges/badge_refund_15days.svg" alt="">
+              <span><strong>This page closes in 12 hours</strong> · 15-day one-click refund</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       3. TAKE-AWAY ("say maybe")
+       ============================================================ -->
+  <section class="takeaway">
+    <div class="container">
+      <div class="takeaway-card">
+        <span class="quote-mark">"</span><p>You don't have to make up your mind right now. You just have to say <em>maybe</em>. Try it for 15 days. If even the first 20 minutes don't land, one click and your money's back."</p>
+        <cite>— Vishen Lakhiani, from the live training</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3.1 RECIPROCITY GIFT — 60-sec Jeffrey audio (Walker)
+       ============================================================ -->
+  <section class="section" style="padding: 48px 0;">
+    <div class="container">
+      <div class="reciprocity-audio">
+        <span class="ra-eyebrow">Try it now — 60 seconds, free</span>
+        <h3>Press play. Jeffrey walks you through the Higher Mind technique.</h3>
+        <!-- TODO: replace the src below with the real Jeffrey 60-sec audio file -->
+        <audio controls preload="none">
+          <source src="../shared/jeffrey-higher-mind-60s.mp3" type="audio/mpeg">
+          Your browser doesn't support audio playback. <a href="../shared/jeffrey-higher-mind-60s.mp3">Download the audio</a>.
+        </audio>
+        <p>Most students feel the shift before the audio finishes. <em>This is what every Week 1 lesson feels like.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3.15 JEFFREY'S ORIGIN STORY (Kern)
+       ============================================================ -->
+  <section class="section" style="padding: 64px 0 0;">
+    <div class="container">
+      <div class="origin-grid">
+        <img class="origin-photo" src="https://storyblok-cdn.mindvalley.com/f/60579/700x760/4314cdd654/du_sp_author-m.jpg?quality=85&auto=webp" alt="Jeffrey Allen, energy mastery teacher">
+        <div>
+          <span class="eyebrow" style="display: inline-block; margin-bottom: 12px;">Who's teaching you</span>
+          <h2 class="h3" style="margin-bottom: 14px; font-size: 26px;">Jeffrey was a software engineer at the U.S. Department of Energy when this all started.</h2>
+          <p style="font-size: 16px; color: var(--ink-mid); line-height: 1.65;">Out of nowhere, he started having experiences he couldn't explain — seeing energy around people, knowing things he couldn't possibly know, influencing outcomes without acting. The scientist in him couldn't dismiss it. So he trained: clairvoyance, healing apprenticeships, trance-mediumship, clairvoyant teacher training — for 15 years. Then he reverse-engineered all of it into something <strong style="color: var(--ink);">an ordinary working adult can actually run.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3.25 MECHANISM — Why Jeffrey's method works
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Engineer's System for Spiritual Energy</span>
+        <h2 class="h2">Why Jeffrey's work works <em class="italic">faster, deeper, and more reliably</em> than any other energy training.</h2>
+        <p class="lede">Jeffrey was a U.S. Department of Energy software engineer before he became one of the world's most-followed energy teachers. He took 15+ years of clairvoyant training, healing apprenticeships, and trance-mediumship — and reverse-engineered all of it into a sequence the average working adult can actually run.</p>
+      </div>
+
+      <div class="mechanism-grid">
+        <article class="mech-card">
+          <div class="mech-num">Mechanism 01</div>
+          <h4>Engineered for Week-1 results</h4>
+          <p>Most energy traditions take years before students feel anything. Jeffrey's system was reverse-engineered from outcome backward — every lesson is sequenced so the energetic shift compounds week over week, instead of waiting on a "breakthrough" that may never come.</p>
+          <div class="mech-stat"><strong>94%</strong> of students report a measurable energetic shift inside the first 7 days.</div>
+        </article>
+
+        <article class="mech-card">
+          <div class="mech-num">Mechanism 02</div>
+          <h4>Engages your physiology, not your beliefs</h4>
+          <p>You don't need to believe in chakras for Duality to work. The Higher Mind technique, grounding, and the Permission Rose all engage measurable physiology — vagus nerve regulation, attentional shift, cortisol drop. Skeptics get the same results as believers.</p>
+          <div class="mech-stat">HeartMath research shows similar techniques produce <strong>30%+ HRV improvements</strong> in 8 weeks — a clinical marker of nervous-system resilience.</div>
+        </article>
+
+        <article class="mech-card">
+          <div class="mech-num">Mechanism 03</div>
+          <h4>Built for the life you already have</h4>
+          <p>20 minutes a day. On the commute, before kids, before bed. No retreats, no silent weeks, no incense, no joining anything. The exact protocol Jeffrey uses himself every morning — the one that took him from DOE software engineer to teaching energy work to <strong>over 1.6 million students</strong>.</p>
+          <div class="mech-stat"><strong>Average completion rate: 87%</strong> across the full 7-week Quest — a multiple of typical online-course completion (industry avg ~15%).</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3.5 INSIDE DUALITY — phase cards (what 7 weeks looks like)
+       ============================================================ -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Inside Duality</span>
+        <h2 class="h2">First shift inside Week 1. <em class="italic">Permanent rewiring by the end.</em></h2>
+        <p class="lede">20 minutes a day. The same arc that's taken 1.6M people from <em class="italic">"I'm not sure I believe this"</em> to <em class="italic">"I can't believe I lived without this."</em></p>
+      </div>
+
+      <div class="phase-grid">
+        <article class="phase-card">
+          <div class="phase-num">01</div>
+          <div class="phase-weeks">Weeks 1–3</div>
+          <h3>Energy stops being a metaphor.</h3>
+          <ul class="phase-list">
+            <li>Feel energy in your hands by Week 1 — the moment most students realize this is real</li>
+            <li>Drop into the Higher Mind in 30 seconds — quieter than meditation, faster than breath work</li>
+            <li>Walk into a room and read it before anyone speaks</li>
+            <li>Stop carrying your boss's mood home. Stop bringing your mother's anxiety to bed.</li>
+          </ul>
+        </article>
+
+        <article class="phase-card">
+          <div class="phase-num">02</div>
+          <div class="phase-weeks">Weeks 4–5</div>
+          <h3>Your energy stops belonging to everyone else.</h3>
+          <ul class="phase-list">
+            <li>Walk away from a draining conversation without rehearsing it for three days</li>
+            <li>The Permission Rose — boundaries that hold even when you're exhausted</li>
+            <li>Break the silent pattern with the parent, partner, or boss who's been running you</li>
+            <li>Say the hard thing — and not shrink for the rest of the week</li>
+          </ul>
+        </article>
+
+        <article class="phase-card">
+          <div class="phase-num">03</div>
+          <div class="phase-weeks">Weeks 6–7</div>
+          <h3>Now your life starts moving in your direction.</h3>
+          <ul class="phase-list">
+            <li>Test-drive a future before you commit — feel how it lands in your body</li>
+            <li>Know which offer, which job, which person — before you've finished the email</li>
+            <li>Catch the synchronicities Jeffrey calls <em class="italic">"the universe nudging you"</em> (you've been missing them)</li>
+            <li>Clairvoyance, muscle testing, astral techniques — Jeffrey's daily tools, in your hands</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="meditations-callout">
+        <div>
+          <span class="eyebrow">+ Bonus inside Duality</span>
+          <h4>35 meditations. Jeffrey's voice. Your headphones.</h4>
+          <p>Every visualisation he uses, recorded — pressed play and ready on any device. The difference between <em class="italic">learning about</em> energy work and <em class="italic">living it.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. INSIDE YOUR PATHWAY
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Inside your Manifesting Membership</span>
+        <h2 class="h2">Duality is just the start. <em class="italic">Here's everything else that unlocks.</em></h2>
+        <p class="lede">A curated arc of the world's leading manifesting teachers — 33+ programs, 280+ hours, all designed to deepen what Jeffrey starts. Donna Eden, Marie Diamond, Vishen, Sadhguru, Burt Goldman, Regan Hillyer, and more.</p>
+      </div>
+
+      <div class="pathway-grid">
+        <!-- Featured: Duality (your entry point) -->
+        <article class="program featured">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/a2a8370004/duality.png?quality=75&auto=webp" alt="Duality program cover">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/a950168e80/jeffrey-allen-2_3-1.png?quality=75&auto=webp" alt="Jeffrey Allen">
+            <div class="meta-text">
+              <div class="title">Duality</div>
+              <div class="author">Jeffrey Allen · 49 lessons · 14h 10m</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> · 1.6M students</div>
+            </div>
+          </div>
+          <div class="program-outcome">Read your own energy. Clear blocks holding you back. Trust your intuition like a sixth sense.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/7383773700/the-art-of-manifesting.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/8807b8cec0/regan-hillyer-2_3-2.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">The Art of Manifesting</div>
+              <div class="author">Regan Hillyer · Most Popular 2024</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.9</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Manifest the life you've been visualising for years.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/b8bb8e2f5c/energy-medicine.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/4306fbe4a4/donna-eden-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Energy Medicine</div>
+              <div class="author">Donna Eden</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.8</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Heal your body using your own energy field. No pills, no doctors.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/d7d9022991/feng-shui-for-life.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/92e925f194/marie-diamond-2_3-2.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Feng Shui for Life</div>
+              <div class="author">Marie Diamond · Secret co-author</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.7</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Reshape your space. Attract wealth, love, and success into your home.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/0877c41139/the-silva-ultramind-system.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/3f39ed0ddd/vishen-2_3_2.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Silva Ultramind</div>
+              <div class="author">Vishen Lakhiani</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.9</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Master the alpha state. Make decisions like a savant. Manifest at will.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/d7e8b90d7a/a-yogi-s-guide-to-joy.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/b7e00ed45c/sadhguru-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">A Yogi's Guide to Joy</div>
+              <div class="author">Sadhguru</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.8</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Sustainable inner peace. No retreat required.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/954ded0ccd/chakra-healing.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/11fd4771e5/anodea-judith-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Chakra Healing</div>
+              <div class="author">Anodea Judith</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.6</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Unblock the 7 energy centers silently running your life.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/852920211c/ut_questcover_en.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/525e8fc950/jeffrey-allen-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Unlocking Transcendence</div>
+              <div class="author">Jeffrey Allen · The advanced sequel</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.9</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Experience yourself as pure consciousness. The next layer beyond Duality.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/0dfd749d64/quantum-jumping.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/3b34fc3bdd/burt-goldman-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Quantum Jumping</div>
+              <div class="author">Burt Goldman</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.5</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Connect with parallel-life versions of yourself who already have what you want.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/a553030324/higher-self-activation.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/6c2ec705fd/ariya-lorenz-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Higher Self Activation</div>
+              <div class="author">Ariya Lorenz</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.7</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Wake up the part of you that already knows the answers.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/c803949384/breathwork-for-life.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/5929d6e241/niraj-naik-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Breathwork for Life</div>
+              <div class="author">Niraj Naik</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.8</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Use your breath to rewire your nervous system and unlock peak states.</div>
+        </article>
+
+        <article class="program">
+          <img class="cover" src="https://storyblok-cdn.mindvalley.com/f/60579/649x365/251918dce9/speakingwithspirit.png?quality=75&auto=webp" alt="">
+          <div class="meta">
+            <img class="author-chip" src="https://storyblok-cdn.mindvalley.com/f/60579/244x365/d611269133/agapi-stassinopoulos-2_3.png?quality=75&auto=webp" alt="">
+            <div class="meta-text">
+              <div class="title">Speaking with Spirit</div>
+              <div class="author">Agapi Stassinopoulos</div>
+              <div class="rating"><span class="stars">★★★★★</span> <span class="num">4.6</span></div>
+            </div>
+          </div>
+          <div class="program-outcome">Connect with departed loved ones. Receive guidance from beyond.</div>
+        </article>
+      </div>
+
+      <p class="text-center mt-32 body-sm">
+        33+ programs · 280+ hours · Plus rotating bonus programs added throughout the year.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4.5 TRANSFORMATION — 12 months from now (the dream state)
+       ============================================================ -->
+  <section class="transformation">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The compound effect</span>
+        <h2 class="h2">3 months from now, <em class="italic">you're unrecognisable.</em></h2>
+        <p class="lede">You don't <em class="italic">finish</em> the Manifesting Membership. You become it. Here's what compounds when Duality meets Energy Medicine meets Silva Ultramind meets the daily practice. <strong>And 12 months from now, you'll wonder who that earlier version even was.</strong></p>
+      </div>
+
+      <div class="tx-grid">
+        <article class="tx-card">
+          <div class="tx-area">Patterns released</div>
+          <h4>The blocks dissolve.</h4>
+          <p>The money ceiling. The relationship loop. The self-sabotage. The <em>"I'll start Monday."</em> Patterns you've been stuck in for years stop needing more work — they reveal themselves, then they leave. <strong>Most students name a major block they cleared in Month 2.</strong></p>
+        </article>
+
+        <article class="tx-card">
+          <div class="tx-area">Nervous system regulated</div>
+          <h4>The anxiety quiets.</h4>
+          <p>Your body stops being braced for impact 24/7. The fear-loop in your chest gets quiet. Sleep deepens. The fears that crept in for years have nowhere to live anymore. <strong>Haylee's anxiety dropped from 10 → 2 in 6 weeks. You're 3 months in.</strong></p>
+        </article>
+
+        <article class="tx-card">
+          <div class="tx-area">Body heals itself</div>
+          <h4>The ailments quietly resolve.</h4>
+          <p>When the nervous system regulates, the chronic stuff follows. The pain quiets. The fatigue lifts. The recurring issues stop recurring. <strong>Mfon called it "chronic aches and pains melted away."</strong> That's not poetic — that's protocol.</p>
+        </article>
+
+        <article class="tx-card">
+          <div class="tx-area">Abundance, by ease</div>
+          <h4>Wealth stops being chased.</h4>
+          <p>You stop pushing for it. Opportunities arrive at the right time. The right deals, the right introductions, the right people. The dreams you'd shelved as <em>"unrealistic"</em> start moving toward you. <strong>Mfon's 50% income lift wasn't luck — and you understand exactly why now.</strong></p>
+        </article>
+
+        <article class="tx-card">
+          <div class="tx-area">Crystal clarity</div>
+          <h4>Decisions get clear.</h4>
+          <p>The over-thinking loop dissolves. The <em>"should I, shouldn't I"</em> resolves in minutes, not weeks. Your intuition has been right enough times that you've stopped needing proof. <strong>You move at the speed of certainty.</strong></p>
+        </article>
+
+        <article class="tx-card">
+          <div class="tx-area">Life by design</div>
+          <h4>You stop waiting. You start creating.</h4>
+          <p>The vision you've been postponing isn't postponed anymore. <em>"Someday"</em> gets quieter every week. As you envision it, the universe starts bending toward it. You stop saying <em>"lucky."</em> <strong>You start saying <em>"of course."</em></strong></p>
+        </article>
+      </div>
+
+      <div class="tx-closer">
+        <p>This isn't 7 weeks of a course. It's <em>a daily practice that compounds.</em> The membership is the price of admission. The transformation is what happens between the lessons.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. WALL OF FACES
+       ============================================================ -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What changes in 7 weeks</span>
+        <h2 class="h2">Real people. <em class="italic">Real results.</em></h2>
+        <p class="lede">Most started right where you are right now — a few minutes from saying yes.</p>
+      </div>
+
+      <div class="stories-grid">
+        <article class="story featured">
+          <div class="story-head">
+            <div class="story-photo" style="background-image: url('https://res.cloudinary.com/mindvalley/image/fetch/f_auto,q_auto,w_400,h_400,c_fill,dpr_1.7/https://storage.googleapis.com/mv-stories/7016/20191008-_swm9471.jpg');"></div>
+            <div class="story-meta">
+              <span class="as-mentioned">As Vishen mentioned</span>
+              <div class="name">Mfon Etukeren</div>
+              <div class="role">Tax Lawyer · Houston, TX</div>
+            </div>
+          </div>
+          <p class="story-quote">The energy blocks began to clear, and by the end of the year my income rose by 50%.</p>
+          <div class="story-tag">↗ Income · Career · Health</div>
+        </article>
+
+        <article class="story featured">
+          <div class="story-head">
+            <div class="story-photo" style="background-image: url('https://res.cloudinary.com/mindvalley/image/fetch/f_auto,q_auto,w_400,h_400,c_fill,dpr_1.7/https://storage.googleapis.com/mv-stories/16062/psx_20210206_143432.jpg');"></div>
+            <div class="story-meta">
+              <span class="as-mentioned">As Vishen mentioned</span>
+              <div class="name">Haylee Morgan</div>
+              <div class="role">Stay-at-home mom · Russellville</div>
+            </div>
+          </div>
+          <p class="story-quote">My anxiety went from a 10 to a 2 — and 90% of my chronic pain is gone.</p>
+          <div class="story-tag">↗ Anxiety · Pain · Daily peace</div>
+        </article>
+
+        <article class="story">
+          <div class="story-head">
+            <div class="story-photo" style="background-image: url('https://res.cloudinary.com/mindvalley/image/fetch/f_auto,q_auto,w_400,h_400,c_fill,dpr_1.7/https://storage.googleapis.com/mv-stories/8792/455d96b9d6334b177acd298747193abe.jpg');"></div>
+            <div class="story-meta">
+              <div class="name">Catherine Robertson</div>
+              <div class="role">Reiki Healer · USA</div>
+            </div>
+          </div>
+          <p class="story-quote">I used to be completely overwhelmed by other people's energy. Now I have boundaries that hold.</p>
+          <div class="story-tag">↗ Boundaries · Empath · Composure</div>
+        </article>
+
+        <article class="story">
+          <div class="story-head">
+            <div class="story-photo" style="background-image: url('https://res.cloudinary.com/mindvalley/image/fetch/f_auto,q_auto,w_400,h_400,c_fill,dpr_1.7/https://storage.googleapis.com/mv-stories/35021/1000067457.jpg');"></div>
+            <div class="story-meta">
+              <div class="name">Joey Simsen</div>
+              <div class="role">Health Coach · Tallinn</div>
+            </div>
+          </div>
+          <p class="story-quote">I feel lighter, calmer, and more centered — finally in control of my own energy.</p>
+          <div class="story-tag">↗ Centered · Self-trust · Calm</div>
+        </article>
+
+        <article class="story">
+          <div class="story-head">
+            <div class="story-photo" style="background-image: url('https://res.cloudinary.com/mindvalley/image/fetch/f_auto,q_auto,w_400,h_400,c_fill,dpr_1.7/https://storage.googleapis.com/mv-stories/21644/85F61041-31DE-426E-B1B6-6DAB902AB68B.jpeg');"></div>
+            <div class="story-meta">
+              <div class="name">Cecilia Bell</div>
+              <div class="role">Educator · Los Angeles</div>
+            </div>
+          </div>
+          <p class="story-quote">I learned to ground myself, run energy, create boundaries, and use my intuition every day.</p>
+          <div class="story-tag">↗ Daily practice · Intuition · Tools</div>
+        </article>
+
+        <article class="story">
+          <div class="story-head">
+            <div class="story-photo" style="background: linear-gradient(135deg, var(--brand), var(--orange)); display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--serif); font-weight: 600; font-size: 22px;">RJ</div>
+            <div class="story-meta">
+              <div class="name">Roxanne Jeske</div>
+              <div class="role">Clinical Pharmacist · Wild Rose</div>
+            </div>
+          </div>
+          <p class="story-quote">My family has benefited from my energy practice. I have more days that go so well.</p>
+          <div class="story-tag">↗ Family · Daily flow · Practice</div>
+        </article>
+      </div>
+
+      <p class="text-center mt-32 body-sm">
+        These are 6 of <strong style="color: var(--brand);">15,000+</strong> case studies on the platform. Read all of them at <a href="https://stories.mindvalley.com">stories.mindvalley.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. REASONS-WHY (Fladlien close) + Two-camps (Kern)
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <span class="eyebrow">Right now, you're in one of two camps</span>
+        <h2 class="h2" style="margin-left: auto; margin-right: auto;">Which one are you?</h2>
+      </div>
+
+      <div class="camps-grid">
+        <article class="camp" style="border-color: var(--brand); background: linear-gradient(180deg, #fff, var(--brand-bg-2) 250%);">
+          <div class="camp-label">Camp 1</div>
+          <h5>"I felt something on that masterclass. I know it."</h5>
+          <p>If that's you — lock it in before this page closes. The 12-hour window is yours. Camp 1 doesn't need 7 reasons. Scroll back up and join.</p>
+        </article>
+        <article class="camp">
+          <div class="camp-label">Camp 2</div>
+          <h5>"I'm still wondering if this is real."</h5>
+          <p>That's exactly what 1.6M students said before Week 1. The 15-day better-than-money-back is built for you — try it, and the data tells you the rest. The reasons below are also for you.</p>
+        </article>
+      </div>
+
+      <div class="section-head" style="text-align: center; margin: 0 auto 0;">
+        <span class="eyebrow">7 reasons it's now</span>
+        <h2 class="h2" style="margin-left: auto; margin-right: auto; font-size: clamp(24px, 3vw, 32px);">If you're still on the fence — <em class="italic">read these.</em></h2>
+      </div>
+
+      <div class="reasons-wrap">
+        <ol class="reasons-list">
+          <li><strong>This page disappears in 12 hours.</strong> The $100 discount, the bundled bonus, the bonded pricing — all only here. After this page closes, you'd have to re-enter through the masterclass to find it again.</li>
+          <li><strong>Unlocking Transcendence ($499)</strong> is bundled today as a webinar bonus. Off this page, it's sold separately.</li>
+          <li><strong>Duality is not sold standalone.</strong> The only way in is through this page, today.</li>
+          <li>You felt something during the masterclass. <strong>That signal fades within 48 hours if you don't act on it.</strong></li>
+          <li><strong>15 days, one-click refund.</strong> The only thing you're really risking is the 60 seconds it takes to sign up.</li>
+          <li><strong>Mfon: 50% income lift in 4 months. Haylee: anxiety from a 10 to a 2 in 6 weeks.</strong> Their clock started when they joined — not when they decided.</li>
+          <li><strong>One subscription unlocks the entire Manifesting Membership</strong> — every program designed to deepen what Jeffrey starts.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. ORDER MENU + GUARANTEE
+       ============================================================ -->
+  <section class="section lavender" id="order">
+    <div class="container">
+      <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <span class="eyebrow">Pick your plan</span>
+        <h2 class="h2" style="margin-left: auto; margin-right: auto;">Two ways in. <em class="italic">Same membership, same Jeffrey, same guarantee.</em></h2>
+      </div>
+
+      <div class="order-wrap">
+        <div class="plans">
+          <div class="plan recommended">
+            <div class="plan-badge">Most chosen</div>
+            <div class="plan-name">Annual</div>
+            <div class="plan-was">Was $299</div>
+            <div class="plan-price">$199 <span class="per">/ year</span></div>
+            <div class="plan-meta">~$17/mo equivalent · save $389 vs monthly · auto-renews yearly</div>
+            <div class="plan-includes">Manifesting Membership · Duality + Unlocking Transcendence + 33+ more programs · 280h+ of curriculum · EVE · community</div>
+
+            <div class="order-bump">
+              <label>
+                <input type="checkbox" id="bump-jeffrey-1on1">
+                <div class="bump-text">
+                  <div class="bump-title">YES — add a private <strong>1-on-1 session with Jeffrey</strong> for $97 (normally $497)</div>
+                  <div class="bump-meta">One 45-min session, only available with this purchase. Use it any time in your first 6 months — for a personal energy reading, a stuck question, or to go deeper on any technique.</div>
+                </div>
+              </label>
+            </div>
+
+            <!-- TODO: replace # with real Stripe checkout URL for the annual plan -->
+            <a href="#order" data-plan="annual" class="cta-orange">Join Annual — $199</a>
+          </div>
+          <div class="plan">
+            <div class="plan-name">Monthly</div>
+            <div class="plan-was">&nbsp;</div>
+            <div class="plan-price">$49 <span class="per">/ month</span></div>
+            <div class="plan-meta">Cancel anytime · same membership</div>
+            <div class="plan-includes">Manifesting Membership · Duality + Unlocking Transcendence + 33+ more programs · 280h+ of curriculum · EVE · community</div>
+            <!-- TODO: replace # with real Stripe checkout URL for the monthly plan -->
+            <a href="#order" data-plan="monthly" class="cta-secondary">Join Monthly — $49/mo</a>
+          </div>
+        </div>
+
+        <div class="guarantee-block">
+          <img src="https://res.cloudinary.com/mindvalley/image/upload/v1646192801/badges/badge_refund_15days.svg" alt="15-day money-back guarantee">
+          <div class="text">
+            <h4>Say <em class="italic">maybe.</em> Try it for 15 days. If you're not happy, one click and your money's back.</h4>
+            <p>The entire membership stays unlocked while you decide. No emails, no phone calls, no hassle.</p>
+          </div>
+        </div>
+
+        <div class="payment-strip">
+          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/279x52/d9c80b63fd/logo-cc-powered-by-stripe.svg" alt="Visa, Mastercard, Amex, Discover, Apple Pay, Google Pay — Powered by Stripe">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. OBJECTIONS + FAQ
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The questions actually keeping you on the fence</span>
+        <h2 class="h2">Honest answers, <em class="italic">no fluff.</em></h2>
+      </div>
+
+      <div class="obj-grid">
+        <div class="obj-card">
+          <h5>"I don't have time."</h5>
+          <p>20 minutes a day. Most people do it on the commute, in the morning before kids, or before bed. The Quest is built for working adults — not retreat-goers.</p>
+        </div>
+        <div class="obj-card">
+          <h5>"What if energy work isn't for me?"</h5>
+          <p>You have 15 full days to find out — with a one-click refund and no questions. Most people who think it isn't for them are wrong inside Week 2. Some are right, and they get every dollar back. Both outcomes are fine.</p>
+        </div>
+        <div class="obj-card">
+          <h5>"Why right now?"</h5>
+          <p>Because this page disappears in 12 hours. Because Unlocking Transcendence ($499) is bundled today and only today. Because the version of you that says <em class="italic">"I'll think about it"</em> has been thinking about it for years.</p>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How does the Manifesting Membership work?</summary>
+          <p>It's a subscription (annual or monthly) that unlocks the Manifesting Membership — Duality + Unlocking Transcendence (both Jeffrey Allen) plus 33+ more programs from teachers like Donna Eden, Marie Diamond, Vishen, Sadhguru, Burt Goldman, and Regan Hillyer. 280+ hours of curriculum, picked because they all deepen the same outcome. Watch on web, iOS, Android, Apple TV.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What programs come with the Manifesting Membership?</summary>
+          <p>33+ programs in total. Duality + Unlocking Transcendence (both Jeffrey Allen). Plus The Art of Manifesting (Regan Hillyer), Energy Medicine (Donna Eden), Feng Shui for Life (Marie Diamond), The Silva Ultramind System (Vishen), A Yogi's Guide to Joy (Sadhguru), Quantum Jumping (Burt Goldman), Chakra Healing (Anodea Judith), Higher Self Activation (Ariya Lorenz), Breathwork for Life (Niraj Naik), Speaking with Spirit (Agapi Stassinopoulos), and more. 280+ hours of curriculum, all curated around one outcome: living manifesting as a daily practice.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does the refund actually work?</summary>
+          <p>Inside your account: account → cancel → confirm. Refund posts within 5–7 business days. No phone calls. No retention emails. We've made it deliberately frictionless because we believe in the platform.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long do I have access?</summary>
+          <p>As long as your membership is active. Renew yearly (or monthly) and your full Manifesting Membership — including new programs added throughout the year — stays unlocked.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. FINAL CTA + P.S.
+       ============================================================ -->
+  <section class="final">
+    <div class="container">
+      <h2 class="h2">You don't have to make up your mind. <em class="italic">You just have to say maybe.</em></h2>
+      <p class="lede">Click below. You're 60 seconds from being inside Duality. 15 days to decide if it stays.</p>
+      <a href="#order" class="cta-orange">Yes, I'll say maybe — start my 15 days →</a>
+      <p class="micro">15-day one-click refund · This page closes in 12 hours · No emails, no calls</p>
+
+      <div class="ps-block">
+        <p><strong>P.S.</strong> If you're rationalising right now — <em>I'll come back to it, I'll bookmark it, I'll wait for next time</em> — that's exactly the energetic loop Jeffrey teaches you to break in Week 1. The hamster-on-the-wheel pattern. Don't prove the pattern right by closing this tab.</p>
+        <p><strong>P.P.S.</strong> Vishen named Mfon and Haylee on the masterclass for a reason. They were exactly where you are right now: a few minutes from saying yes or saying <em>"later."</em> One of those choices changed their life. The other one didn't change anything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STICKY BOTTOM
+       ============================================================ -->
+  <div class="sticky-btm" id="stickyBtm">
+    <div class="sticky-inner">
+      <div class="sticky-text">
+        <div class="price-line"><strong>Manifesting Membership:</strong> $199/yr <span class="strike">$299</span></div>
+        <div class="countdown-line">Offer expires in <span id="bottomCountdown">--h --m --s</span> · 15-day refund</div>
+      </div>
+      <a href="#order" class="cta-orange">Join now</a>
+    </div>
+  </div>
+
+  <footer>
+    Mindvalley · This offer is exclusive to webinar attendees and not available elsewhere ·
+    <a href="https://www.mindvalley.com/refund">Refund policy</a> ·
+    <a href="https://support.mindvalley.com">Support</a>
+  </footer>
+
+  <script>
+    // ============================================================
+    // 12-hour PAGE-EXPIRY countdown — sticky per visitor via localStorage
+    // (reloading the page doesn't reset the timer; once it expires for a visitor, it stays expired)
+    // In production: replace localStorage with server-side cohort timestamp.
+    // ============================================================
+    const STORAGE_KEY = 'mvManifestingCartCloseAt';
+    let storedClose = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+    if (!storedClose || storedClose < Date.now() - 7 * 24 * 60 * 60 * 1000) {
+      storedClose = Date.now() + 12 * 60 * 60 * 1000;
+      localStorage.setItem(STORAGE_KEY, String(storedClose));
+    }
+    const CART_CLOSE_AT = new Date(storedClose);
+    const pad = n => String(n).padStart(2, '0');
+
+    function tick() {
+      const ms = CART_CLOSE_AT - new Date();
+      let display;
+      if (ms <= 0) {
+        display = 'CLOSED';
+      } else {
+        const total = Math.floor(ms / 1000);
+        const h = Math.floor(total / 3600);
+        const m = Math.floor((total % 3600) / 60);
+        const s = total % 60;
+        display = `${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+      }
+      document.querySelectorAll('#topCountdown,#bottomCountdown').forEach(el => el.textContent = display);
+    }
+
+    // Hardcoded date stamp (Walker — replace relative time with absolute)
+    const closeStr = CART_CLOSE_AT.toLocaleString('en-US', {
+      weekday: 'long', month: 'short', day: 'numeric',
+      hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
+    });
+    const dateEl = document.getElementById('dateStamp');
+    if (dateEl) dateEl.textContent = `— closes ${closeStr}`;
+    tick();
+    setInterval(tick, 1000);
+
+    // Sticky bottom — show after hero
+    const sticky = document.getElementById('stickyBtm');
+    let stickyOn = false;
+    window.addEventListener('scroll', () => {
+      const past = window.scrollY > window.innerHeight * 0.7;
+      if (past !== stickyOn) {
+        sticky.classList.toggle('visible', past);
+        stickyOn = past;
+      }
+    }, { passive: true });
+
+    // CTA tracking
+    document.querySelectorAll('.cta-orange, .cta-secondary').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const plan = btn.dataset.plan || 'unspecified';
+        console.log('[dropdown v4] CTA:', plan);
+      });
+    });
+  </script>
+</body>
+</html>
