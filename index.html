@@ -1452,109 +1452,149 @@ VALUES TO VERIFY:
     }
     footer a { color: var(--brand); }
 
-    /* Trainer authority section */
-    .origin-grid {
-      max-width: 920px;
-      margin: 0 auto 48px;
+    /* Trainer authority section — unified card design */
+    .trainer-card {
+      max-width: 1040px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #fff 0%, var(--brand-bg) 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 44px 48px;
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: 280px 1fr;
+      gap: 44px;
+      align-items: start;
     }
-    .origin-photo {
+    .trainer-photo {
       width: 100%;
-      aspect-ratio: 1/1;
+      aspect-ratio: 4/5;
       object-fit: cover;
       border-radius: 18px;
-      box-shadow: 0 16px 40px -16px rgba(15, 19, 26, .25);
+      box-shadow: 0 20px 50px -16px rgba(15, 19, 26, .25);
     }
-    .auth-stats {
-      max-width: 920px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+    .trainer-content .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
     }
-    .auth-stat {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px 18px;
-      text-align: center;
-    }
-    .auth-stat .num {
+    .trainer-content h2.tc-h {
       font-family: var(--serif);
       font-size: 30px;
-      font-weight: 600;
-      color: var(--brand);
-      line-height: 1;
+      line-height: 1.15;
       letter-spacing: -.01em;
-      margin-bottom: 6px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: var(--ink);
     }
-    .auth-stat .label {
-      font-size: 12px;
+    .trainer-content h2.tc-h em.purple {
+      color: var(--brand);
+      font-style: normal;
+    }
+    .trainer-content p.tc-bio {
+      font-size: 15.5px;
       color: var(--ink-mid);
+      line-height: 1.6;
+      margin: 0 0 22px;
+    }
+    .trainer-content p.tc-bio strong { color: var(--ink); font-weight: 600; }
+
+    /* Inline stat row inside the card */
+    .trainer-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 36px;
+      padding-top: 22px;
+      margin-bottom: 22px;
+      border-top: 1px solid rgba(122, 18, 212, .18);
+    }
+    .trainer-stats .stat { display: flex; flex-direction: column; gap: 2px; }
+    .trainer-stats .stat .num {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--brand);
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1;
+    }
+    .trainer-stats .stat .label {
+      font-size: 11px;
+      color: var(--ink-dim);
+      text-transform: uppercase;
+      letter-spacing: .08em;
       font-weight: 500;
     }
-    .as-seen-on {
-      max-width: 920px;
-      margin: 36px auto 0;
+
+    /* Inline Vishen quote inside the card */
+    .trainer-quote {
+      padding-top: 22px;
+      border-top: 1px solid rgba(122, 18, 212, .18);
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--ink);
+      font-style: italic;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .trainer-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 12.5px;
+      color: var(--ink-dim);
+      letter-spacing: .03em;
+    }
+    .trainer-quote cite strong { color: var(--ink); font-weight: 600; }
+
+    /* Press logo strip — separate, smaller, below card */
+    .trainer-press {
+      max-width: 1040px;
+      margin: 28px auto 0;
       text-align: center;
     }
-    .as-seen-on .eyebrow {
+    .trainer-press .label {
       display: inline-block;
-      margin-bottom: 18px;
+      font-family: var(--serif);
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      font-weight: 600;
+      margin-bottom: 14px;
     }
-    .as-seen-on .logos {
+    .trainer-press .logos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 28px 40px;
+      gap: 28px 44px;
+      filter: grayscale(1) opacity(.55);
+      transition: filter .2s ease;
     }
-    .as-seen-on .logos img {
-      height: 22px;
-      opacity: .55;
-      transition: opacity .2s ease;
-    }
-    .as-seen-on .logos img:hover { opacity: 1; }
-    .vishen-quote {
-      max-width: 720px;
-      margin: 40px auto 0;
-      padding: 28px 32px;
-      background: linear-gradient(135deg, var(--brand-bg) 0%, #fff 100%);
-      border-left: 3px solid var(--brand);
-      border-radius: 0 16px 16px 0;
-    }
-    .vishen-quote p {
-      font-family: var(--serif);
-      font-size: 19px;
-      line-height: 1.45;
-      color: var(--ink);
-      font-weight: 400;
-      font-style: italic;
-      margin: 0 0 14px;
-    }
-    .vishen-quote cite {
-      display: block;
-      font-family: var(--sans);
-      font-style: normal;
-      font-size: 13px;
-      color: var(--ink-dim);
-      letter-spacing: .03em;
-    }
-    .vishen-quote cite strong { color: var(--ink); font-weight: 600; }
-    @media (max-width: 700px) {
-      .origin-grid { grid-template-columns: 1fr; gap: 18px; margin-bottom: 32px; }
-      .origin-photo { max-width: 140px; }
-      .auth-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .auth-stat { padding: 16px 12px; }
-      .auth-stat .num { font-size: 24px; }
-      .auth-stat .label { font-size: 11px; }
-      .as-seen-on .logos { gap: 16px 24px; }
-      .as-seen-on .logos img { height: 18px; }
-      .vishen-quote { padding: 22px 22px; }
-      .vishen-quote p { font-size: 16px; }
+    .trainer-press .logos:hover { filter: grayscale(0) opacity(1); }
+    .trainer-press .logos img { height: 20px; }
+
+    @media (max-width: 800px) {
+      .trainer-card {
+        grid-template-columns: 1fr;
+        padding: 28px 22px;
+        gap: 22px;
+        border-radius: 22px;
+      }
+      .trainer-photo {
+        max-width: 200px;
+        margin: 0 auto;
+        aspect-ratio: 1/1;
+      }
+      .trainer-content h2.tc-h { font-size: 23px; line-height: 1.18; }
+      .trainer-content p.tc-bio { font-size: 14.5px; }
+      .trainer-stats { gap: 16px 24px; padding-top: 18px; margin-bottom: 18px; }
+      .trainer-stats .stat .num { font-size: 19px; }
+      .trainer-stats .stat .label { font-size: 10px; }
+      .trainer-quote { font-size: 14.5px; padding-top: 18px; }
+      .trainer-quote cite { font-size: 11.5px; }
+      .trainer-press { margin-top: 22px; }
+      .trainer-press .logos { gap: 18px 28px; }
+      .trainer-press .logos img { height: 16px; }
     }
 
     /* utility */
@@ -1819,38 +1859,32 @@ VALUES TO VERIFY:
        ============================================================ -->
   <section class="section" style="padding: 64px 0;">
     <div class="container">
-      <div class="origin-grid">
-        <img class="origin-photo" src="https://storyblok-cdn.mindvalley.com/f/60579/700x760/4314cdd654/du_sp_author-m.jpg?quality=85&auto=webp" alt="Jeffrey Allen, energy mastery teacher">
-        <div>
-          <span class="eyebrow" style="display: inline-block; margin-bottom: 12px;">Who's teaching you</span>
-          <h2 class="h3" style="margin-bottom: 14px; font-size: 28px; line-height: 1.15;">The energy teacher <em class="purple">1.6 million students</em> chose over everyone else.</h2>
-          <p style="font-size: 16px; color: var(--ink-mid); line-height: 1.65;">He's not the loudest voice in the energy space — he's the one the loudest voices quote. 15 years of training: clairvoyance, healing apprenticeships, trance-mediumship, clairvoyant teacher training. Then he reverse-engineered all of it into a system <strong style="color: var(--ink);">an ordinary working adult can actually run.</strong></p>
+
+      <!-- Unified trainer card -->
+      <div class="trainer-card">
+        <img class="trainer-photo" src="https://storyblok-cdn.mindvalley.com/f/60579/700x760/4314cdd654/du_sp_author-m.jpg?quality=85&auto=webp" alt="Jeffrey Allen, energy mastery teacher">
+        <div class="trainer-content">
+          <span class="eyebrow">Who's teaching you</span>
+          <h2 class="tc-h">The energy teacher <em class="purple">1.6 million students</em> chose over everyone else.</h2>
+          <p class="tc-bio">He's not the loudest voice in the energy space — he's the one the loudest voices quote. 15 years of training: clairvoyance, healing apprenticeships, trance-mediumship, clairvoyant teacher training. Then he reverse-engineered all of it into a system <strong>an ordinary working adult can actually run.</strong></p>
+
+          <div class="trainer-stats">
+            <div class="stat"><div class="num">1.6M+</div><div class="label">Students taught</div></div>
+            <div class="stat"><div class="num">4.9 / 5</div><div class="label">Average rating</div></div>
+            <div class="stat"><div class="num">15 yrs</div><div class="label">Of training</div></div>
+            <div class="stat"><div class="num">100K+</div><div class="label">5-star reviews</div></div>
+          </div>
+
+          <blockquote class="trainer-quote">
+            "After encountering this mild-mannered engineer back in 2014, I'm 100% convinced you can create your own coincidences and synchronicities. What Jeffrey did seems to defy all laws of probability."
+            <cite>— <strong>Vishen Lakhiani</strong>, founder of Mindvalley · 20M+ members</cite>
+          </blockquote>
         </div>
       </div>
 
-      <!-- Authority stats -->
-      <div class="auth-stats">
-        <div class="auth-stat">
-          <div class="num">1.6M+</div>
-          <div class="label">Students taught</div>
-        </div>
-        <div class="auth-stat">
-          <div class="num">4.9 / 5</div>
-          <div class="label">Average rating</div>
-        </div>
-        <div class="auth-stat">
-          <div class="num">15 yrs</div>
-          <div class="label">Of clairvoyant training</div>
-        </div>
-        <div class="auth-stat">
-          <div class="num">100K+</div>
-          <div class="label">Five-star reviews</div>
-        </div>
-      </div>
-
-      <!-- As featured on -->
-      <div class="as-seen-on">
-        <span class="eyebrow">Featured on</span>
+      <!-- Press logo strip below the card -->
+      <div class="trainer-press">
+        <div class="label">Featured on</div>
         <div class="logos">
           <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/x/897dfd4eaa/new-york-times_logo.svg" alt="The New York Times">
           <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/102x28/a450a1b6d2/logo_forbes-40px.svg" alt="Forbes">
@@ -1859,12 +1893,6 @@ VALUES TO VERIFY:
           <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/65x22/031ee3c7fb/logo-google.svg" alt="Google">
         </div>
       </div>
-
-      <!-- Vishen endorsement (the killer move — founder of Mindvalley publicly endorses) -->
-      <blockquote class="vishen-quote">
-        <p>"After encountering this mild-mannered engineer back in 2014, I'm 100% convinced you can create your own coincidences and synchronicities. What Jeffrey did seems to defy all laws of probability."</p>
-        <cite><strong>Vishen Lakhiani</strong> — founder, Mindvalley · 20M+ members worldwide</cite>
-      </blockquote>
     </div>
   </section>
 
