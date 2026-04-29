@@ -330,13 +330,17 @@ VALUES TO VERIFY:
     .stack-card .stack-head .pill {
       background: var(--brand-bg-2);
       color: var(--brand);
-      font-size: 10px;
-      letter-spacing: .14em;
+      font-size: 11px;
+      letter-spacing: .12em;
       text-transform: uppercase;
       font-weight: 700;
-      padding: 4px 9px;
+      padding: 5px 10px;
       border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1;
     }
+    .stack-card .stack-head { flex-wrap: wrap; }
     .stack-card .stack-sub {
       font-size: 13px;
       color: var(--ink-dim);
@@ -1448,13 +1452,13 @@ VALUES TO VERIFY:
     }
     footer a { color: var(--brand); }
 
-    /* Origin story (Jeffrey bio) */
+    /* Trainer authority section */
     .origin-grid {
-      max-width: 880px;
-      margin: 0 auto;
+      max-width: 920px;
+      margin: 0 auto 48px;
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 36px;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
       align-items: center;
     }
     .origin-photo {
@@ -1464,9 +1468,93 @@ VALUES TO VERIFY:
       border-radius: 18px;
       box-shadow: 0 16px 40px -16px rgba(15, 19, 26, .25);
     }
+    .auth-stats {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .auth-stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+    .auth-stat .num {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--brand);
+      line-height: 1;
+      letter-spacing: -.01em;
+      margin-bottom: 6px;
+    }
+    .auth-stat .label {
+      font-size: 12px;
+      color: var(--ink-mid);
+      font-weight: 500;
+    }
+    .as-seen-on {
+      max-width: 920px;
+      margin: 36px auto 0;
+      text-align: center;
+    }
+    .as-seen-on .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+    .as-seen-on .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 28px 40px;
+    }
+    .as-seen-on .logos img {
+      height: 22px;
+      opacity: .55;
+      transition: opacity .2s ease;
+    }
+    .as-seen-on .logos img:hover { opacity: 1; }
+    .vishen-quote {
+      max-width: 720px;
+      margin: 40px auto 0;
+      padding: 28px 32px;
+      background: linear-gradient(135deg, var(--brand-bg) 0%, #fff 100%);
+      border-left: 3px solid var(--brand);
+      border-radius: 0 16px 16px 0;
+    }
+    .vishen-quote p {
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.45;
+      color: var(--ink);
+      font-weight: 400;
+      font-style: italic;
+      margin: 0 0 14px;
+    }
+    .vishen-quote cite {
+      display: block;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 13px;
+      color: var(--ink-dim);
+      letter-spacing: .03em;
+    }
+    .vishen-quote cite strong { color: var(--ink); font-weight: 600; }
     @media (max-width: 700px) {
-      .origin-grid { grid-template-columns: 1fr; gap: 18px; }
+      .origin-grid { grid-template-columns: 1fr; gap: 18px; margin-bottom: 32px; }
       .origin-photo { max-width: 140px; }
+      .auth-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .auth-stat { padding: 16px 12px; }
+      .auth-stat .num { font-size: 24px; }
+      .auth-stat .label { font-size: 11px; }
+      .as-seen-on .logos { gap: 16px 24px; }
+      .as-seen-on .logos img { height: 18px; }
+      .vishen-quote { padding: 22px 22px; }
+      .vishen-quote p { font-size: 16px; }
     }
 
     /* utility */
@@ -1662,7 +1750,7 @@ VALUES TO VERIFY:
           </div>
           <h1 class="hero-h">Remove obstacles. Attract synchronicities. <em class="purple">With ease.</em></h1>
           <p class="hero-sub">
-            60 minutes was the taste — in 7 weeks, every area of your life (money, relationships, decisions, health) bends to your energy instead of the other way around. The same path took <strong>Mfon, a Texas tax lawyer,</strong> to a 50% income lift — and <strong>Haylee, a working mom of two,</strong> from anxiety 10 → 2. <strong>$100 off the Manifesting Membership</strong>, only on this page.
+            60 minutes was the taste — in 7 weeks, every area of your life (money, relationships, decisions, health) bends to your energy instead of the other way around. The same path took <strong>Mfon, a Texas tax lawyer,</strong> to a 50% income lift — and <strong>Haylee, a working mom of two,</strong> took her anxiety from a 10 to a 2.
           </p>
 
           <div class="trust-strip">
@@ -1694,9 +1782,6 @@ VALUES TO VERIFY:
             </ul>
 
             <div class="totals">
-              <div style="font-size: 12.5px; color: var(--ink-soft); margin-bottom: 10px; padding: 10px 12px; background: var(--brand-bg); border-radius: 8px; line-height: 1.45;">
-                <strong style="color: var(--brand);">In-person equivalent:</strong> $4,000–$5,000 to train with Jeffrey at a retreat in Tokyo. <em>(Vishen's words on the masterclass.)</em>
-              </div>
               <div class="total-was">Total real value: $12,995+</div>
               <div class="total-now"><span class="currency">$</span><span class="num">199</span><span style="font-size: .35em; color: var(--ink-dim); font-family: var(--sans); margin-left: 6px; letter-spacing: 0;">/ year</span></div>
               <div class="total-pay">or <strong>$49 / month</strong> — both renew automatically · cancel anytime</div>
@@ -1730,36 +1815,56 @@ VALUES TO VERIFY:
   </section>
 
   <!-- ============================================================
-       3.1 RECIPROCITY GIFT — 60-sec Jeffrey audio (Walker)
+       3.15 JEFFREY — AUTHORITY / "BEST IN THE BUSINESS"
        ============================================================ -->
-  <section class="section" style="padding: 48px 0;">
-    <div class="container">
-      <div class="reciprocity-audio">
-        <span class="ra-eyebrow">Try it now — 60 seconds, free</span>
-        <h3>Press play. Jeffrey walks you through the Higher Mind technique.</h3>
-        <!-- TODO: replace the src below with the real Jeffrey 60-sec audio file -->
-        <audio controls preload="none">
-          <source src="../shared/jeffrey-higher-mind-60s.mp3" type="audio/mpeg">
-          Your browser doesn't support audio playback. <a href="../shared/jeffrey-higher-mind-60s.mp3">Download the audio</a>.
-        </audio>
-        <p>Most students feel the shift before the audio finishes. <em>This is what every Week 1 lesson feels like.</em></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       3.15 JEFFREY'S ORIGIN STORY (Kern)
-       ============================================================ -->
-  <section class="section" style="padding: 64px 0 0;">
+  <section class="section" style="padding: 64px 0;">
     <div class="container">
       <div class="origin-grid">
         <img class="origin-photo" src="https://storyblok-cdn.mindvalley.com/f/60579/700x760/4314cdd654/du_sp_author-m.jpg?quality=85&auto=webp" alt="Jeffrey Allen, energy mastery teacher">
         <div>
           <span class="eyebrow" style="display: inline-block; margin-bottom: 12px;">Who's teaching you</span>
-          <h2 class="h3" style="margin-bottom: 14px; font-size: 26px;">Jeffrey was a software engineer at the U.S. Department of Energy when this all started.</h2>
-          <p style="font-size: 16px; color: var(--ink-mid); line-height: 1.65;">Out of nowhere, he started having experiences he couldn't explain — seeing energy around people, knowing things he couldn't possibly know, influencing outcomes without acting. The scientist in him couldn't dismiss it. So he trained: clairvoyance, healing apprenticeships, trance-mediumship, clairvoyant teacher training — for 15 years. Then he reverse-engineered all of it into something <strong style="color: var(--ink);">an ordinary working adult can actually run.</strong></p>
+          <h2 class="h3" style="margin-bottom: 14px; font-size: 28px; line-height: 1.15;">The energy teacher <em class="purple">1.6 million students</em> chose over everyone else.</h2>
+          <p style="font-size: 16px; color: var(--ink-mid); line-height: 1.65;">He's not the loudest voice in the energy space — he's the one the loudest voices quote. 15 years of training: clairvoyance, healing apprenticeships, trance-mediumship, clairvoyant teacher training. Then he reverse-engineered all of it into a system <strong style="color: var(--ink);">an ordinary working adult can actually run.</strong></p>
         </div>
       </div>
+
+      <!-- Authority stats -->
+      <div class="auth-stats">
+        <div class="auth-stat">
+          <div class="num">1.6M+</div>
+          <div class="label">Students taught</div>
+        </div>
+        <div class="auth-stat">
+          <div class="num">4.9 / 5</div>
+          <div class="label">Average rating</div>
+        </div>
+        <div class="auth-stat">
+          <div class="num">15 yrs</div>
+          <div class="label">Of clairvoyant training</div>
+        </div>
+        <div class="auth-stat">
+          <div class="num">100K+</div>
+          <div class="label">Five-star reviews</div>
+        </div>
+      </div>
+
+      <!-- As featured on -->
+      <div class="as-seen-on">
+        <span class="eyebrow">Featured on</span>
+        <div class="logos">
+          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/x/897dfd4eaa/new-york-times_logo.svg" alt="The New York Times">
+          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/102x28/a450a1b6d2/logo_forbes-40px.svg" alt="Forbes">
+          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/68x33/74c459c6fe/logo_cnn.svg" alt="CNN">
+          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/178x33/660efad2fd/logo_usa-today.svg" alt="USA Today">
+          <img src="https://res.cloudinary.com/mindvalley/image/fetch/c_scale,dpr_2,f_auto,fl_lossy,q_auto,w_auto/https://a.storyblok.com/f/60579/65x22/031ee3c7fb/logo-google.svg" alt="Google">
+        </div>
+      </div>
+
+      <!-- Vishen endorsement (the killer move — founder of Mindvalley publicly endorses) -->
+      <blockquote class="vishen-quote">
+        <p>"After encountering this mild-mannered engineer back in 2014, I'm 100% convinced you can create your own coincidences and synchronicities. What Jeffrey did seems to defy all laws of probability."</p>
+        <cite><strong>Vishen Lakhiani</strong> — founder, Mindvalley · 20M+ members worldwide</cite>
+      </blockquote>
     </div>
   </section>
 
@@ -2041,7 +2146,7 @@ VALUES TO VERIFY:
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">The compound effect</span>
-        <h2 class="h2">3 months from now, <em class="italic">you're unrecognisable.</em></h2>
+        <h2 class="h2">90 days from now, <em class="italic">you're unrecognisable.</em></h2>
         <p class="lede">You don't <em class="italic">finish</em> the Manifesting Membership. You become it. Here's what compounds when Duality meets Energy Medicine meets Silva Ultramind meets the daily practice. <strong>And 12 months from now, you'll wonder who that earlier version even was.</strong></p>
       </div>
 
@@ -2055,7 +2160,7 @@ VALUES TO VERIFY:
         <article class="tx-card">
           <div class="tx-area">Nervous system regulated</div>
           <h4>The anxiety quiets.</h4>
-          <p>Your body stops being braced for impact 24/7. The fear-loop in your chest gets quiet. Sleep deepens. The fears that crept in for years have nowhere to live anymore. <strong>Haylee's anxiety dropped from 10 → 2 in 6 weeks. You're 3 months in.</strong></p>
+          <p>Your body stops being braced for impact 24/7. The fear-loop in your chest gets quiet. Sleep deepens. The fears that crept in for years have nowhere to live anymore. <strong>Haylee's anxiety dropped from a 10 to a 2 in 6 weeks. You're 3 months in.</strong></p>
         </article>
 
         <article class="tx-card">
@@ -2084,7 +2189,7 @@ VALUES TO VERIFY:
       </div>
 
       <div class="tx-closer">
-        <p>This isn't 7 weeks of a course. It's <em>a daily practice that compounds.</em> The membership is the price of admission. The transformation is what happens between the lessons.</p>
+        <p>This isn't a 7-week course you finish. It's <em>a daily practice that compounds</em> — and the transformation is what happens between the lessons.</p>
       </div>
     </div>
   </section>
@@ -2243,17 +2348,6 @@ VALUES TO VERIFY:
             <div class="plan-price">$199 <span class="per">/ year</span></div>
             <div class="plan-meta">~$17/mo equivalent · save $389 vs monthly · auto-renews yearly</div>
             <div class="plan-includes">Manifesting Membership · Duality + Unlocking Transcendence + 33+ more programs · 280h+ of curriculum · EVE · community</div>
-
-            <div class="order-bump">
-              <label>
-                <input type="checkbox" id="bump-jeffrey-1on1">
-                <div class="bump-text">
-                  <div class="bump-title">YES — add a private <strong>1-on-1 session with Jeffrey</strong> for $97 (normally $497)</div>
-                  <div class="bump-meta">One 45-min session, only available with this purchase. Use it any time in your first 6 months — for a personal energy reading, a stuck question, or to go deeper on any technique.</div>
-                </div>
-              </label>
-            </div>
-
             <!-- TODO: replace # with real Stripe checkout URL for the annual plan -->
             <a href="#order" data-plan="annual" class="cta-orange">Join Annual — $199</a>
           </div>
